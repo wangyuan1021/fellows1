@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--内部样式和外部样式谁在后面谁就起作用-->
+    <!--内联样式优先-->
+
+    <!--内部样式-->
+    <style>
+        div{
+            background: pink;
+            color: green;
+            width: 300px;
+        }
+        div{
+            width: 600px;
+        }
+    </style>
+
+    <!--外部样式-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--内联样式-->
+    <!--<div style="background: #2319dc;font-size=40px;color: white";>-->
+        <!--我是页面-->
+    <!--</div>-->
+    <div style="width: 50px">
+        我是内部测试
+    </div>
+    <div>
+        dddd
+    </div>
+</body>
+</html>
