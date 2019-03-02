@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*#div1{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: #ff0000;*/
+            /*!*可以使用快捷键Tab，如bg#f00+Tab就是上面的，h200+Tab*!*/
+        /*}*/
+        /*#div2{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: #ff0000;*/
+        /*}*/
+        /*.div{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: #ff0000;*/
+        /*}*/
+
+        /*#div1 h1{*/
+            /*color: blue;*/
+        /*}*/
+         /*.div>h1{*/
+             /*color: blue;*/
+         /*}*/
+
+        #div1{
+            background: #0000ff;
+        }
+        .cls1{
+            background: #00ff00;
+        }
+         div{
+             background: #ff0000;
+             height: 300px;
+         }
+        #div2 div{
+            background: #cccccc;
+        }
+        .cls1.cls2.cls3.cls4{
+            background: #ff0000;
+            height: 200px;
+        }
+                   /*id > class > tag  后代选择器 子代选择器*/
+          /*权重值  100    10     1*/
+    </style>
+</head>
+<body>
+    <div id="div2">
+        <div id="div1" class="cls1 cls2 cls3 cls4">
+
+        </div>
+    </div>
+
+    <!--<div id="div1" class="div">-->
+        <!--<h1>我是div1</h1>-->
+        <!--<div>-->
+            <!--<h1>hhhhh</h1>-->
+            <!--<span>ddd</span>-->
+        <!--</div>-->
+        <!--<span>span</span>-->
+    <!--</div>-->
+    <!--<div id="div2" class="div">-->
+        <!--<h1>我是div2</h1>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--我是div3-->
+    <!--</div>-->
+</body>
+</html>
