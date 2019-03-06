@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+
+            height: 200px;
+            /*display: inline;*/
+            /*上面变成内联元素*/
+            /*display: inline-block;*/
+            /*上面既是内联又是块，但有的浏览器不支持，而且因为每个div之间有空格会存在空隙，所以不好用*/
+            float: right;
+        }
+        #div1{
+            width: 200px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            background: #00ff00;
+            /*display: none;*/
+            /*显示隐藏*/
+
+        }
+        #div3{
+            width: 200px;
+            background: #0000ff;
+        }
+        #div4{
+            height: 100px;
+            background: #cccccc;
+            float: none;
+            clear: both;
+            /*塌陷*/
+
+        }
+    </style>
+</head>
+<body>
+   <div id="div1">
+
+   </div>
+   <div id="div2">
+
+   </div>
+   <div id="div3">
+
+   </div>
+   <div id="div4">
+
+   </div>
+
+
+</body>
+</html>
