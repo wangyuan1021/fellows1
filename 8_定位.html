@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        div{
+            height: 200px;
+            width: 200px;
+            float: left;
+        }
+        #div1{
+            background: #ff0000;
+
+        }
+        #div2{
+            background: #00ff00;
+            /*position: relative;*/
+                /*相对定位，相对于它自己初始化的位置*/
+            /*top: 100px;*/
+            /*!*left: 100px;*!*/
+            /*right: -100px;*/
+            position: absolute;
+                /*绝对定位，相对于父元素或者离他最近的，没有就是相对于border的*/
+            top: 100px;
+            left: 100px;
+
+        }
+        #div3{
+            background: #0000ff;
+        }
+        #div4 {
+            width: 800px;
+            height: 300px;
+            background: #cccccc;
+            /*margin-left: 100px;*/
+        }
+        #div5{
+            width: 200px;
+            height: 100px;
+            background: #999999;
+            position: fixed;
+                /*固定的，相对于浏览器的*/
+            right: 20px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div4">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+        <div id="div5"></div>
+
+</body>
+</html>

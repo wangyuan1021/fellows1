@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1::after{
+            /*伪元素是行级元素，大小靠内容撑开，content必须有*/
+            content:'' ;
+            width:0;
+            border:10px solid transparent;
+            border-top-color:#ccc;
+        }
+        /*#div1::before{*/
+            /*content:'' ;*/
+            /*width:0;*/
+            /*border:10px solid transparent;*/
+            /*border-top-color:#ccc;*/
+        /*}*/
+        #div1::selection{
+            color: yellow;
+            background: #ff0000;
+        }
+        /*selection 选中内容的颜色*/
+        #div1::first-line{
+            /*color: #00ff00;*/
+        }
+        /*第一行变颜色*/
+        
+        #div1::first-letter{
+            color:#ccc;
+        }
+        /*第一个元素变颜色*/
+    </style>
+<body>
+    <div id="div1">
+    cvcssdsfdgfg
+    </div>
+    <input type="text">
+</body>
+</html>

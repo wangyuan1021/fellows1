@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height:200px;
+            background: #ff0000;
+            /*transition: width 2s linear,height 1s linear;*/
+            /*-webkit-transition: all 2s linear;*/
+            /*-moz-transition: all 2s linear;*/
+            /*-ms-transition: all 2s linear;*/
+            /*-o-transition: all 2s linear;*/
+            transition: all 2s linear;
+            /*有些浏览器不识别transition，所以可以都写上，但是一般浏览器都可以*/
+
+        }
+        #div1:hover{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+</body>
+</html>
