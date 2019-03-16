@@ -8,7 +8,6 @@
 #login-contain{
     line-height: 32px;
     display: inline;
-
 }
 #login-contain a{
     /*margin-left: 20px;*/
@@ -31,9 +30,8 @@
     line-height: 32px;
 }
 #header-menu .iconfont {
-    color: red;
+    color: #fff;
     font-size: 12px;
-
 }
 #header-menu .menu-hd::after{
     content: '';
@@ -52,7 +50,70 @@
     background: #ffffff;
     color: #ff0000;
 }
-#header-menu .menu-hd:hover a {
+#header-menu .menu-hd:hover .submenu {
+    display: block;
+}
+#header-menu .menu-hd:hover>a {
      color: #ff0000;
     text-decoration: underline;
  }
+#header-menu .menu-nav:hover a {
+    color: yellow;
+}
+#header-menu .menu-nav:hover a span{
+    color: #fff;
+}
+#header-menu .menu-nav a:hover span{
+    color: yellow;
+}
+/*优先级问题*/
+#header-menu .menu-nav:hover .iconfont{
+    color: yellow;
+}
+#header-menu .submenu{
+    border: 1px solid #ccc;
+    border-top: 0;
+    width: 100px;
+    position:absolute;
+    top:32px;
+    left:0;
+
+    display: none;
+}
+#header-menu .submenu li{
+    padding: 0 14px;
+}
+#header-menu .submenu a{
+    color:#999;
+}
+#header-menu .submenu a:hover{
+    color:#f00;
+    text-decoration:underline ;
+}
+#search img{
+    width:120px;
+    /*图片只设置一个宽，另一个会等比例*/
+    float: left;
+}
+#search-contain{
+    float: left;
+}
+#search-contain .search-list li{
+    float: left;
+}
+#search-contain .search-input input{
+    width: 490px;
+    height: 36px;
+    outline: none;
+    /*针对input外边框，不同浏览器不一样，消除*/
+}
+#search-contain .search-input button{
+    width: 132px;
+    height: 36px;
+    border: 0;
+    background: #ff0036;
+    font-size: 18px;
+}
+#search-contain .search-input{
+    border:2px solid #ff0036;
+}
