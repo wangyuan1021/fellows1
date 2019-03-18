@@ -83,6 +83,7 @@
 #header-menu .submenu li{
     padding: 0 14px;
 }
+
 #header-menu .submenu a{
     color:#999;
 }
@@ -91,29 +92,64 @@
     text-decoration:underline ;
 }
 #search img{
-    width:120px;
+    width: 240px;
     /*图片只设置一个宽，另一个会等比例*/
     float: left;
 }
 #search-contain{
+    margin-top: 40px;
+    margin-left:90px;
+    height: 36px;
     float: left;
+
 }
-#search-contain .search-list li{
-    float: left;
+
+#search-contain .search-input {
+    border: 2px solid #ff0036;
+    height: 36px;
 }
 #search-contain .search-input input{
     width: 490px;
     height: 36px;
     outline: none;
     /*针对input外边框，不同浏览器不一样，消除*/
+    border: 0;
+    text-indent: 10px;
+    float: left;
+}
+#search-contain .search-input input::placeholder{
+    color: #ccc;
+    font-size: 14px;
 }
 #search-contain .search-input button{
     width: 132px;
     height: 36px;
     border: 0;
     background: #ff0036;
+    color:#fff;
     font-size: 18px;
+    outline: none;
+    float: left;
+
 }
-#search-contain .search-input{
-    border:2px solid #ff0036;
+
+#search-contain .search-list li{
+    float: left;
+}
+#search-contain .search-list li{
+    padding: 0 12px;
+    margin: 5px 0;
+    border-right: 1px solid #ccc;
+}
+#search-contain .search-list li.last{
+    border-right: 0;
+}
+#search-contain .search-list li.first{
+    padding-left: 0;
+}
+#search-contain .search-list li a{
+    color: #ccc;
+}
+#search-contain .search-list li.red a{
+    color: #ff0000;
 }
