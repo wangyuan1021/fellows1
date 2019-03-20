@@ -158,7 +158,7 @@
 }
 
 #main-menu{
-    margin-left: 200px;
+    margin-left: 500px;
     height: 30px;
 }
 #main-menu img{
@@ -177,6 +177,7 @@
 }
 #banner{
     position: relative;
+    border-top: 2px solid #ff0000;
 }
 #banner .banner-image li a{
     display: block;
@@ -194,20 +195,59 @@
     /*透明度0-1，连带里面所有东西都透明*/
     background: rgba(0,0,0,.6);
     /*背景颜色+透明度 ,背景透明，但是内容不透明*/
+    top: -31px;
 }
-#banner .nav li{
+#banner .nav > li{
     width: 200px;
     height: 31px;
     line-height: 31px;
     color: #fff;
 }
-#banner .nav li a{
+#banner .nav > li > a{
     color: #fff;
     font-weight: 100;
+    /*字体的粗细*/
 
 }
 #banner .nav li i{
     margin: 0 10px;
+}
+#banner .nav li.product{
+    background: #ff0000;
+    font-size: 20px;
+
+}
+#banner .nav li.product i{
+    font-size: 20px;
+}
+#banner .nav li:hover{
+    background: #ffffff;
+}
+#banner .nav li.product:hover{
+    background: #f00;
+}
+#banner .nav li.red:hover,#banner .nav li.red:hover > a{
+    color: red;
+}
+#banner .nav li.blue:hover,#banner .nav li.blue:hover > a{
+    color: blue;
+}
+#banner .nav li.yellow:hover,#banner .nav li.yellow:hover > a{
+     color: yellow;
+ }
+#banner .banner-menu{
+    position: absolute;
+    top: 31px;
+    left: 200px;
+    background: #ccc;
+}
+#banner .banner-menu .banner-menu-head {
+    width: 60px;
+    font-size: 16px;
+    float:left;
+}
+#banner .banner-menu .banner-list{
+    width:400px;
 }
 
 
