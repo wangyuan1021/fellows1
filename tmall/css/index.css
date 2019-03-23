@@ -224,6 +224,9 @@
     background: #ffffff;
 }
 /*除了谁谁，其余变*/
+#banner .nav li:not(.product):hover .banner-menu{
+    display: block;
+}
 #banner .nav li.red:hover,#banner .nav li.red:hover > a{
     color: red;
 }
@@ -240,6 +243,7 @@
     background: #ccc;
     width: 852px;
     height: 500px;
+    display: none;
 }
 #banner .banner-left > li{
     margin: 10px 0;
@@ -281,9 +285,31 @@
 #banner .banner-menu .banner-right img{
     width: 87px;
     margin: 0 1px 1px 0;
-
+}
+#brand .brand-type{
+    float: left;
+}
+#brand .brand-type img{
+    width: 100%;
+}
+#brand .brand1{
+    width: 485px;
+}
+#brand .brand2{
+    width: 485px;
+    margin-left: 13px;
+}
+#brand .title{
+    height:55px;
+    background: #ffffff;
+    line-height: 55px;
+    font-size: 18px;
 
 }
-
+#brand .title a{
+    display: block;
+    width: 56px;
+    height: 51px;
+}
 
 
