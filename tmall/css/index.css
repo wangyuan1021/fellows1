@@ -286,6 +286,13 @@
     width: 87px;
     margin: 0 1px 1px 0;
 }
+#brand{
+
+    background-color: #f5f5f5;
+    overflow: hidden;
+    /*设置背景时可以解决浮动问题*/
+    padding: 24px;
+}
 #brand .brand-type{
     float: left;
 }
@@ -293,23 +300,45 @@
     width: 100%;
 }
 #brand .brand1{
-    width: 485px;
+    width: 585px;
 }
 #brand .brand2{
-    width: 485px;
-    margin-left: 13px;
+    width: 585px;
+    margin-left: 27px;
 }
 #brand .title{
     height:55px;
     background: #ffffff;
     line-height: 55px;
     font-size: 18px;
-
+    padding: 0 10px;
 }
+
 #brand .title a{
-    display: block;
+    background: url('../images/more.png') no-repeat;
+                                         /*不平铺*/
+    background-position: right center;
+    background-size: 20px 20px;
+    /*display: block;*/
     width: 56px;
     height: 51px;
+    float: right;
 }
-
+#list-pic .pic{
+    float:left;
+    width: 122px;
+    height: 108px;
+    position: relative;
+}
+#list-pic .pic img{
+    width: 82%;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*上面的百分比是相对父元素的百分比*/
+    transform: translate(-50%,-50%);
+    /*这个百分比是相对自身的百分比*/
+}
 
