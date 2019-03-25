@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #div1 {
+            height: 500px;
+            background: #ccc;
+        }
+        #div2{
+             width: 200px;
+             height: 200px;
+             background:#ff0000;
+             position: fixed;
+             top: 200px;
+             right: 50px;
+         }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background:#ff0000;
+            position: sticky;
+            /*兼容性不太好*/
+            top: 100px;
+            /*怪异盒模型和标准盒模型的转换*/
+            /*box-sizing: content-box;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+        <div id="div3">
+
+        </div>
+    </div>
+</body>
+</html>
