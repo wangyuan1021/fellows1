@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            float: left;
+            position: relative;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /*有的浏览器不好使，加上上面的一句就好了，所以三句一起写*/
+
+
+        }
+        div:hover{
+            border-color: #0f0;
+            z-index: 1;
+            /*在最上面*/
+        }
+        #div2{
+            left: -1px;
+        }
+        #div3{
+            clear: both;
+            top: -1px;
+        }
+        #div4{
+            top: -1px;
+            left: -1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">字省略为点点点字省略为点点点字省略为点点点字省略为点点点</div>
+    <div id="div2">ddddddddddddddddddddddddddddddddddddddddd</div>
+    <div id="div3">dddddddddddddddddddddddddddddddddddddddddd</div>
+    <div id="div4">dddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+</body>
+</html>

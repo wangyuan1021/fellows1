@@ -11,19 +11,34 @@
             /*border: 1px solid #000;*/
             /*border: 1px solid transparent;*/
             /*position: absolute;*/
-            float: left;
+            /*float: left;*/
+            /*上面是解决上边距合并的方法，父子关系，在父元素加上面的*/
         }
         #div2{
             width: 200px;
             height: 200px;
             background:#ff0000;
+            /*margin-top: 100px;*/
+            margin-bottom: 200px;
+        }
+        #div3{
+            width: 200px;
+            height: 400px;
+            background: #0f0;
             margin-top: 100px;
+            /*float: left;*/
+            position: absolute;
+            /*2和3是兄弟关系，外边距合并问题，在3加上上面的*/
+
         }
     </style>
 </head>
 <body>
     <div id="div1">
         <div id="div2">
+
+        </div>
+        <div id="div3">
 
         </div>
     </div>
