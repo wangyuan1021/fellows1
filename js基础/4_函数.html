@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function fn(){
+    //     var a = window.prompt("请输入宽");
+    //     var b = window.prompt("请输入高");
+    //     console.log(a*b/2);
+    // }
+    // 上面可以在前面调用函数，但是下面的不可以在前面调用函数
+
+    // var fn = function(){
+    //     var a = window.prompt("请输入宽");
+    //     var b = window.prompt("请输入高");
+    //     console.log(a*b/2);
+    // }
+    // fn();//函数调用
+
+    // var fn = function(w,h){
+    //     console.log(w*h/2);
+    // }
+    // fn(4,3);
+
+
+   //  var fn = function(w,h){
+   //      return w*h/2;
+   //      // console.log(111);//一旦return，下面的语句就不执行了
+   //  }
+   // var xx = fn(3,4);
+   //  alert(xx);
+   //
+   //  //作用域的问题
+   //  function f(){
+   //      var a = 1;
+   //      console.log(a);
+   //  }
+   //  // console.log(a); a在函数里面定义的，所以这里不行
+   //  f();
+
+    function f1(){
+        a = 1;
+        console.log(a);
+    }
+    f1();
+    console.log(a);//a没在函数里面定义，代表在全局定义
+
+
+</script>
+</body>
+</html>
