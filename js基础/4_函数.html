@@ -33,6 +33,7 @@
    // var xx = fn(3,4);
    //  alert(xx);
    //
+
    //  //作用域的问题
    //  function f(){
    //      var a = 1;
@@ -41,12 +42,27 @@
    //  // console.log(a); a在函数里面定义的，所以这里不行
    //  f();
 
-    function f1(){
-        a = 1;
+    // function f1(){
+    //     a = 1;
+    //     console.log(a);
+    // }
+    // f1();      //1
+    // console.log(a);//a没在函数里面声明，代表在全局    //1
+
+    // function f(){
+    //     console.log(a);
+    //     var a = 1;
+    // }
+    // f();
+    //结果是undefined,上面就相当于：
+    function f(){
+        var a;
         console.log(a);
+        a = 1;
     }
-    f1();
-    console.log(a);//a没在函数里面定义，代表在全局定义
+    f();
+
+
 
 
 </script>
