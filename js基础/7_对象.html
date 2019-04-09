@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var obj = new Object();
+    obj.name = 'wy';
+    obj.age = '25';
+    obj.sex = '女';
+    // obj.eat = function(){
+    //     console.log('吃了吗');
+    // }
+    // obj.eat();
+
+
+    // obj.eat = function(){
+    //     console.log('吃了吗');
+    //     return '吃了';
+    // }
+    // console.log(obj.eat());
+    console.log(obj);
+
+
+    var obj1 = {
+        name:'wy',
+        age:'25',
+        sex:'女'
+    }
+    // console.log(obj1.name);
+
+    //获取对象动态属性值时加中括号
+    for(var i in obj1){
+        console.log(obj1[i]);
+    }
+
+
+</script>
+
+
+</body>
+</html>

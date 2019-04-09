@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+            background: #0000ff;
+        }
+        .b{
+            background: #00ff00;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            // var img = document.getElementById('myImg');
+            // img.onclick = function(){
+            //     console.log(11111);
+            // }
+            // var img = document.getElementById('myImg');
+            // console.log(img.tagName);
+            // console.log(img.className);
+            // 不能直接用class,所以是className
+
+            var img = document.getElementById('div1');
+            div1.onclick = function(){
+                // console.log(div1.innerHTML);
+                div1.innerHTML = '我是div1';
+                // div1.style.background = 'blue';//要在下面加上style="background: red"才可以，这里删掉了
+                // 点击之后，内容及背景颜色都变了
+                div1.className = 'b';
+
+
+            }
+        }
+    </script>
+     <!--这样放在head里面就不会出错了-->
+
+</head>
+<body>
+<img id='myImg' class="imgclass" src="../img/2.jpg" alt="内存堆栈">
+<div id="div1" class="a">
+    <p>
+DDDDD
+    </p>
+</div>
+
+<!--<script>-->
+    <!--var img = document.getElementById('myImg');-->
+    <!--img.onclick = function(){-->
+        <!--console.log(11111);-->
+    <!--}-->
+<!--</script>-->
+<!--把上面script放在head里面会出错，但是加入window.onload就可以-->
+</body>
+</html>
