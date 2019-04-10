@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label for="div1">用户名</label>
+    <!--使用label便签之后，点击用户名光标也是落在input里-->
+    <input  id="div1" type="text">
+    <label for="pwd">密码</label>
+    <input  id="pwd" type="password">
+    <button id="btn">取消</button>
+
+
+<a href="back.html">链接</a>
+
+
+<script>
+
+    var oDiv = document.getElementById('div1')
+    oDiv.focus();
+    // console.log(window.screenLeft || window.screenX);
+    // console.log(window.screenTop || window.screenY);
+    // //避免有些浏览器不兼容问题
+    // console.log(window.innerWidth);
+    // console.log(window.innerHeight);
+    // console.log(window.outerHeight);
+
+    // var w = open('http://baidu.com','','width=300,height=200');
+    // // w.moveBy(300,100);//移动
+    // w.moveTo(300,100);//移动到
+
+
+    var xx = confirm('确认删除吗');//一种弹框
+    if(xx){
+        console.log('删除成功');
+    }else{
+        console.log('已取消');
+    }
+
+
+    //延时输出
+    // setTimeout(function(){
+    //     console.log('1111');
+    // },2000);
+
+     var timer = setTimeout(function(){
+        console.log('1111');
+        console.log(2222);
+    },2000);
+    console.log(timer);//1，再加一个定时器就是2了
+    clearTimeout(timer);//清除延时
+
+
+    //每隔一秒重复执行
+    // setInterval(function(){
+    //     console.log(2);
+    // },1000);
+    //每隔一秒重复执行，点击取消按钮时取消
+   var timer = setInterval(function(){
+        console.log(2);
+    },1000);
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick = function(){
+        clearInterval(timer);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    console.log(window.location.host);
+</script>
+
+
+</body>
+</html>

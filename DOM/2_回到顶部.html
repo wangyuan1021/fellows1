@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        div{
+            width: 35px;
+            height: 74px;
+            background: url('go-top.jpeg') -22px;
+                /*这里有一个火箭标识的图片（三个图片在一起）,这里随便用一个图片代替*/
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+        div:hover{
+            background-position: -113px;
+            /*鼠标移入时，图片变化，这里直接移动图片，来达到换显示图片的目的*/
+        }
+    </style>
+</head>
+<body>
+dfdbffgf
+    <div id="go-top">
+
+    </div>
+<script>
+    //匀速的回到顶部
+    var oDiv = document.getElementById('go-top');
+    // oDiv.onclick = function(){
+    //     var top = document.documentElement.scrollTop;
+    //     // console.log(top);
+    //     var timer = setInterval(function(){
+    //         scrollTo(0,top-=100);
+    //         if(top < 30){
+    //             clearInterval(timer);
+    //             scrollTo(0,0);
+    //         }
+    //     },500)
+    // }
+
+
+    //变速的回到顶部，越来越慢
+    oDiv.onclick = function(){
+        var top = document.documentElement.scrollTop || document.body.scrollTop;//防止有的不好使，两个都写上
+        // console.log(top);
+        var timer = setInterval(function(){
+            scrollTo(0,top*=0.6);
+            if(top <= 1){
+                clearInterval(timer);
+                scrollTo(0,0);
+            }
+        },500)
+    }
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
