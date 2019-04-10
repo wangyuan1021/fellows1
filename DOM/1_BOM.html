@@ -12,8 +12,17 @@
     <input  id="pwd" type="password">
     <button id="btn">取消</button>
 
+    <!--另外一部分，提交，在地址链接可以看到-->
+    <!--<form action="xxx.html">-->
+        <!--<label for="div1">用户名</label>-->
+        <!--<input  id="div1" type="text" name="username">-->
+        <!--<label for="pwd">密码</label>-->
+        <!--<input  id="pwd" type="password" name="password">-->
+        <!--<button id="btn">提交</button>-->
+    <!--</form>-->
 
-<a href="back.html">链接</a>
+
+    <a href="back.html">链接</a>
 
 
 <script>
@@ -32,12 +41,12 @@
     // w.moveTo(300,100);//移动到
 
 
-    var xx = confirm('确认删除吗');//一种弹框
-    if(xx){
-        console.log('删除成功');
-    }else{
-        console.log('已取消');
-    }
+    // var xx = confirm('确认删除吗');//一种弹框
+    // if(xx){
+    //     console.log('删除成功');
+    // }else{
+    //     console.log('已取消');
+    // }
 
 
     //延时输出
@@ -58,22 +67,32 @@
     //     console.log(2);
     // },1000);
     //每隔一秒重复执行，点击取消按钮时取消
-   var timer = setInterval(function(){
-        console.log(2);
-    },1000);
-    var oBtn=document.getElementById('btn');
-    oBtn.onclick = function(){
-        clearInterval(timer);
+   // var timer = setInterval(function(){
+   //      console.log(2);
+   //  },1000);
+   //  var oBtn=document.getElementById('btn');
+   //  oBtn.onclick = function(){
+   //      clearInterval(timer);
+   //  }
+
+
+    //点击按钮跳到另一个网页
+    btn.onclick = function(){
+        location.href = 'back.html';
+    }
+
+    //输出当前网址
+    btn.onclick = function(){
+       console.log(location.href);
     }
 
 
 
-
-
-
-
-
-
+    if(navigator.userAgent.indexOf('iPhone') > -1){
+        location.href = 'http://m.taobao.com';
+    }else{
+        location.href = 'http://www.taobao.com';
+    }
 
 
     console.log(window.location.host);

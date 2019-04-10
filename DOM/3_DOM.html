@@ -6,5 +6,61 @@
 </head>
 <body>
 
+<p id="p1">p1p1p1p1</p>
+<div id="div1" xx="ssss">
+    <p>pppp</p>
+    <h1>hhhhh</h1>
+</div>
+<input type="text" name="s1">
+<input type="text" name="s1">
+<input type="text" name="s1">
+<script>
+    // var ap = document.getElementsByTagName('p');
+    // var ap = document.getElementsByName('s1');
+    //             // document.getElementsByClassName('');//兼容性不好
+    //
+    // ap[0].style.color = 'green';
+    // ap[1].style.background = 'green';
+    // ap[1].style.display = 'none';
+
+
+    // var p1 = document.getElementById('p1');
+    // console.log(p1.tagName == "P");//P是大写
+
+    var div = document.getElementById('div1');
+            console.log(div.getAttribute('id'));//获取div的id地址,标准语法
+            // console.log(div.id);//也可以
+
+            div.setAttribute('id','div2');//设置id，标准语法
+            // div.id = 'div2';//也可以，自带的可以
+                div.xx = 'div2';//不可以，自定义的不可以改了
+            div.setAttribute('xx','div2');//可以
+
+
+
+    // div.onclick = function(e){
+    //     e = e || window.event;
+             // console.log(e.target);//真正触发谁
+            // console.log(e.currentTarget);//事件绑谁身上
+             // console.log(this);//事件绑谁身上或者当前对象引用
+        //
+        // if(e.target.tagName == 'P'){
+        //     console.log(111);
+        // }else{
+        //     console.log(222);
+        // }
+    // }
+    //事件三要素：事件源 事件执行函数  事件本身（事件对象e）
+
+
+
+
+
+
+
+
+</script>
+
+
 </body>
 </html>
