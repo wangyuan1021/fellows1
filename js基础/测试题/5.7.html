@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 裴波纳契数列1 1 2 3 5 8 13
+    //非递归方法
+    // function fn(n){
+    //     if(n == 1 || n == 2){
+    //         return 1;
+    //     }
+    //     var a1 = 1;
+    //     var a2 = 1;
+    //     var temp;
+    //     for(var i = 3;i<=n;i++){
+    //         temp = a1 + a2;
+    //         a1 = a2;
+    //         a2 = temp;
+    //     }
+    //     return temp;
+    // }
+    // console.log(fn(6));
+
+    //下面是递归方法
+     function fn(n){
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        // return fn(n-2) + fn(n-1);
+         return arguments.callee(n-2) + arguments.callee(n-1);
+        //代表当前函数，递归固定使用这个，可以随便改函数名称
+     }
+     console.log(fn(5));
+
+
+</script>
+</body>
+</html>

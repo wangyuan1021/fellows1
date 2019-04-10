@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ran(x,y){
+        return Math.floor(Math.random() *(y-x+1)+ x);
+    }
+    // for(var i=0;i<3;i++){
+    //     if(ran(1,9)==8){
+    //         console.log('success');
+    //         break;
+    //     }
+    // }
+    //或者
+    var arr = [];
+    for(var i=0;i<3;i++){
+        arr.push(ran(1,9));
+    }
+    console.log(arr);
+    if(arr.indexOf(8) > -1){
+        console.log('success');
+    }
+
+
+    var str="Hello word!";
+    document.write(str.substr(6,2));
+    //wo从第六位开始，取两个
+
+    // document.write(str.substring(3,7));
+    // lo w从第三位开始取到第七位，但是不包括第七位，注意空格
+
+
+</script>
+</body>
+</html>

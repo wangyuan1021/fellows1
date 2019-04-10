@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    // var str = '1n3n4nb5m6';
+    // var s = '';
+    // for(var i=0;i<str.length;i++){
+    //     if(str.charAt(i)>=0 && 9>=str.charAt(i)){
+    //         s += str.charAt(i);
+    //     }
+    // }
+    // console.log(s);
+
+    //下面利用函数调用,收集数字字符的函数
+    function CollectDigits(str){
+        var s = '';
+        for(var i=0;i<str.length;i++){
+                if(str.charAt(i)>=0 && 9>=str.charAt(i)){
+                    s += str.charAt(i);
+                }
+            }
+            return s;
+    }
+     var a = CollectDigits('232ffd3');
+    console.log(a);
+
+
+</script>
+</body>
+</html>
