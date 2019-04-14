@@ -19,7 +19,7 @@
         }
         #container .imgs img{
             position: absolute;
-            display: none;
+
         }
         #container .imgs img.selected{
             display: block;
@@ -28,11 +28,13 @@
             position: absolute;
             right: 10px;
             bottom: 10px;
+            z-index: 999;
         }
         #container .arrows{
             position: absolute;
             left: 10px;
             bottom: 10px;
+            z-index: 999;
         }
         #container .nav li, .arrows span{
             float: left;
@@ -70,7 +72,7 @@
         </div>
 
     </div>
-
+    <script src="jslib.js"></script>
     <script>
         var aLi = document.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
@@ -78,6 +80,10 @@
         var oPrev = document.getElementById('prev');
         var oNext = document.getElementById('next');
         var nowIndex = 0;
+        var zIndex = 4;
+        for(var i=0;i<aImg.length;i++){
+            aImg[i].style.zIndex = aImg.length - i ;
+        }
 
         for(i=0;i<aLi.length;i++){
             aLi[i].index = i;
@@ -121,11 +127,16 @@
         function changeImg(index){
             for(var j=0;j<aLi.length;j++){
                 aLi[j].className = '';
-                aImg[j].className = '';
+                // aImg[j].className = '';
             }
-            aImg[index].className = 'selected';
+            // aImg[index].className = 'selected';
             aLi[index].className = 'selected';
+            aImg[index].style.zIndex = ++zIndex;
+            aImg[index].style.opacity = 0;
+            animate(aImg[index],{opacity:100});//这里是引入的一个函数
+
         }
+
         oContainer.onmouseover = function(){
             clearInterval(timer);
         }
@@ -139,7 +150,6 @@
                 oNext.onclick();
 
             },1000);
-
         }
 
 

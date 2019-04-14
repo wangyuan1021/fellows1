@@ -16,23 +16,27 @@
             height: 280px;
             margin: 500px auto;
             position: relative;
+            overflow: hidden;
+        }
+        #container .imgs{
+            width: 2080px;
+            position: absolute;
         }
         #container .imgs img{
-            position: absolute;
-            display: none;
+            float: left;
         }
-        #container .imgs img.selected{
-            display: block;
-        }
+
         #container .nav{
             position: absolute;
             right: 10px;
             bottom: 10px;
+
         }
         #container .arrows{
             position: absolute;
             left: 10px;
             bottom: 10px;
+
         }
         #container .nav li, .arrows span{
             float: left;
@@ -52,8 +56,8 @@
 </head>
 <body>
     <div id="container">
-        <div class="imgs">
-            <img class="selected" src="img/1.jpg" alt="">
+        <div class="imgs" id="img-container">
+            <img src="img/1.jpg" alt="">
             <img src="img/2.jpg" alt="">
             <img src="img/3.jpg" alt="">
             <img src="img/4.jpg" alt="">
@@ -70,14 +74,19 @@
         </div>
 
     </div>
-
+    <script src="jslib.js"></script>
     <script>
         var aLi = document.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
         var oContainer = document.getElementById('container');
+        var oImgCon= document.getElementById('img-container');
         var oPrev = document.getElementById('prev');
         var oNext = document.getElementById('next');
         var nowIndex = 0;
+        var zIndex = 4;
+        for(var i=0;i<aImg.length;i++){
+            aImg[i].style.zIndex = aImg.length - i ;
+        }
 
         for(i=0;i<aLi.length;i++){
             aLi[i].index = i;
@@ -121,11 +130,18 @@
         function changeImg(index){
             for(var j=0;j<aLi.length;j++){
                 aLi[j].className = '';
-                aImg[j].className = '';
+                // aImg[j].className = '';
             }
-            aImg[index].className = 'selected';
+            // aImg[index].className = 'selected';
             aLi[index].className = 'selected';
+            // oImgCon.style.left = -aImg[0].offsetWidth * index+ 'px';
+            animate(oImgCon,{left:-aImg[0].offsetWidth * index});//这里是引入的一个js函数里的,我的是空的
+            // aImg[index].style.zIndex = ++zIndex;
+            // aImg[index].style.opacity = 0;
+            // animate(aImg[index],{opacity:100});//这里是引入的一个js函数里的,我的是空的
+
         }
+
         oContainer.onmouseover = function(){
             clearInterval(timer);
         }
@@ -139,7 +155,6 @@
                 oNext.onclick();
 
             },1000);
-
         }
 
 
