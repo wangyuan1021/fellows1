@@ -34,14 +34,10 @@
             background: #cccccc;
             border-top: 1px solid #000;
             position: absolute;
-            display: none;
+
         }
         #contain li.selected{
             background: #000000;
-        }
-        #contain div.show{
-            /*display: block;*/
-            z-index: 1;
         }
 
     </style>
@@ -53,18 +49,16 @@
             <li>222</li>
             <li>333</li>
         </ul>
-        <div class="show">aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
+        <div id="show">aaa</div>
+
     </div>
 
     <script>
 
-        //利用一个div
+        //利用一个div实现
         var aLi = document.getElementsByTagName('li');
-        var oContain = document.getElementById('contain');
-        var aDiv = oContain.getElementsByTagName('div');
-        var zIndex = 1;
+        var oDiv = document.getElementById('show');
+        var arr = ['aaa','bbb','ccc'];
         for(var i=0;i<aLi.length;i++){
             aLi[i].index = i;
             aLi[i].onclick = function(){
@@ -75,7 +69,8 @@
                 }
                 // this.style.background = '#000';
                 this.className = 'selected';
-                aDiv[this.index].style.zIndex = ++zIndex;
+                oDiv.innerHTML = arr[this.index];
+                // aDiv[this.index].style.zIndex = ++zIndex;
                 // aDiv[this.index].className = 'show';
 
 
