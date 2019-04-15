@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<div>-->
+        <!--div2-->
+    <!--</div>-->
+    <div id="div1">
+        99999
+        <div id="div2">
+            div2
+        </div>
+       <div>
+           dddd
+       </div>
+        div1
+    </div>
+    <script>
+
+        var oDiv = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+                 // var adiv = document.getElementsByTagName('div');
+                  // aDiv.push('1111');//报错，数组里面的在这不能用
+
+        // console.log(oDiv.nodeName);
+        // console.log(oDiv.nodeType);
+        // console.log(oDiv.nodeValue);
+        console.log(oDiv.firstChild);//在IE8可以获取第一个元素节点，在谷歌是文本节点
+        console.log(oDiv.firstElementChild);//获取第一个元素节点，标准
+        console.log(oDiv.childNodes);
+        console.log(oDiv.previousElementSibling);//和上面firstChild一样
+        console.log(oDiv.hasChildNodes());//回车 文本也是孩子，返回true
+
+        var p = document.createElement('p');//生成一个p
+
+        //创造文本节点用createTextNode
+        var s = document.createTextNode('ssss');
+        p.appendChild(s);
+
+        //或者直接下面
+        // p.innerHTML = '1111';
+
+        oDiv.insertBefore(p, oDiv2);//在oDiv里的oDiv2前面加p
+
+        
+
+
+        console.log(getNext(oDiv2));
+        console.log(getFirst(oDiv));
+
+        //封装函数
+        function getFirst(elem) {
+            var f = elem.firstChild;
+            // if(f.nodeType != 1)
+            //        return getNext(f);
+            //  }
+            // return f;
+            return f.nodeType != 1?getNext(f):f;
+        }
+
+        function getNext(elem){
+            do{
+                elem = elem.nextSibling
+            }while(elem.nodeType != 1 && elem != null)
+            return elem;
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
