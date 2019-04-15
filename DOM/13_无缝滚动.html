@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #container .ul1{
+            width: 440px;
+            position: absolute;
+            left: 0;
+        }
+        #container .ul1 li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: #000000;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+            margin-right: 10px;
+        }
+        #container .div1{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+        #container .div1 span{
+            background: #ccc;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="div1">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+    <script>
+        var aUl = document.getElementsByClassName('ul1');
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+
+        console.log(aUl[0].innerHTML);
+        aUl[0].innerHTML += aUl[0].innerHTML;
+        aUl[0].style.width = aUl[0].offsetWidth * 2 + 'px';
+        var speed = -2;
+        setInterval(function () {
+            // var ileft = getComputedStyle(aUl[0],false).left;
+            var ileft = aUl[0].offsetLeft;//取得就是物理距离，得到的值是数字
+            aUl[0].style.left = ileft + speed + 'px';
+            if(ileft < -aUl[0].offsetWidth/2) {
+                aUl[0].style.left = 0;
+            }
+            if(ileft > 0){
+                aUl[0].style.left = -aUl[0].offsetWidth/2 + 'px';
+            }
+            // console.log(ileft);
+
+            // aUl[0].style.left = parseInt(ileft) -2 +'px';
+            // aUl[0].style.left = ileft -2 +'px';
+
+        },10)
+
+        // oLeft.onmouseover = function () {
+        //     speed = -2;
+        // }
+        // oRight.onmouseover = function () {
+        //     speed = 2;
+        // }
+        //或者
+        oLeft.onmouseover = oRight.onmouseover = function () {
+            if(this == oLeft){
+                speed = -2;
+            }else{
+                speed = 2;
+            }
+        }
+        
+
+
+
+
+    </script>
+</body>
+</html>
