@@ -62,36 +62,22 @@
 
 <script>
     var aA = document.getElementsByTagName('a');
-    var oUl = document.getElementById('menu');
-    var aSubMenu = oUl.getElementsByTagName('ul');
+
     // var aSubMenu = document.getElementsByClassName('sub-menu');
     for(var i=0;i<aA.length;i++){
-        aA[i].xx=i;
+            aA[i].flag = true;
         aA[i].onclick = function () {
-            // if(aSubMenu[this.xx].style.display == 'block'){
-            //     aSubMenu[this.xx].style.display = 'none';
-            // }else{
-            //     aSubMenu[this.xx].style.display = 'block';
-            // }
-
-            if(getStyle(aSubMenu[this.xx],'display') == 'none'){
-                aSubMenu[this.xx].style.display = 'block';
+            if(this.flag){
+                this.nextElementSibling.style.display = 'block';
+                // this.flag = false;
             }else{
-                aSubMenu[this.xx].style.display = 'none';
-
+                this.nextElementSibling.style.display = 'none';
+                // this.flag = true;
             }
+            this.flag = !this.flag;
             return false;
         }
     }
-    function getStyle(elem,prop) {
-        if(elem.currentStyle){
-            return elem.currentStyle[prop];
-
-        }else{
-            return getComputedStyle(elem,false)[prop];
-        }
-    }
-
 
 
 </script>
