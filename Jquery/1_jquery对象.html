@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1" class="div2">div</div>
+    <div class="div2">divdiv</div>
+    <p>ppp</p>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li class="li3">003</li>
+        <li>004</li>
+        <li>005</li>
+        <li>333</li>
+    </ul>
+    <h1>h1h1</h1>
+    <h2>h2h2</h2>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+        //标准写法
+
+
+        //简写写法
+        $(function () {
+            //链式操作
+            $('.div2').css('color','red').css('background','blue');
+            //也可以下面
+            $('.div2,p').css({
+                background:'blue',
+                color:'red',
+                'font-size':40
+            });
+        });
+
+        // $('#ul1 li:eq(0)').css('background','red');
+        // $('#ul1 li:gt(2)').css('background','red');
+        // $('#ul1 li:first').css('background','red');
+        // $('#ul1 li:last').css('background','red');
+        // $('#ul1 li:even').css('background','red');//下标为偶数
+        // $('#ul1 li:odd').css('background','red');//下标为奇数
+
+        // $('#ul1 li:not(.li3)').css('background','red');
+        var a = '.li3';
+        $('#ul1 li:not('+ a +')').css('background','red');
+        // $(':header').css('background','red');
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // $('#div1').css('background','red');
+
+        var div = document.getElementById('div1');
+                     // div.css('background','red');//错误，没有这样
+
+        console.log(div);
+
+        console.log($('#div1'));
+
+        console.log($('#div1').get(0));
+        console.log($('#div1')[0]);
+        //jq对象 -> js原生对象  $obj.get(0)  或者 $obj[0]
+        //js原生对象 -> jq对象   $(obj)
+        console.log($(div).css('background','red'));
+        
+        
+       //文档就绪函数。  它与window.onload不同的是，可以写多个而不会被覆盖，只等加载完html结构，
+        // 而window.onload要加载完所有资源
+
+
+    </script>
+</body>
+</html>
