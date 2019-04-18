@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <ul id="ul1">
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+    </div>
+    <button id="add">add</button>
+
+<script>
+
+    var aLi = document.getElementsByTagName('li');
+    var oDiv = document.getElementById('div1');
+
+    var oBtn = document.getElementById('add');
+    var oUl = document.getElementById('ul1');
+
+    oUl.onclick = function(e){
+        console.log(e.target.innerHTML);//点击的
+        console.log(e.currentTarget.innerHTML);//指的是ul，事件绑在ul身上
+        e.stopPropagation();//阻止ul继续往上冒泡
+
+    }
+    oDiv.onclick = function(){
+        console.log(11111111);
+    }
+    //事件委托   或者    事件代理    //很重要，经常使用，必考
+            //多个孩子/多个子元素需要有一个相同的事件，避免定义多个函数，
+            // 就绑在父元素身上，利用冒泡原理，把子元素事件冒泡到父元素身上，
+            // 父元素只绑一个事件就可以了
+
+    // for(var i=0;i<aLi.length;i++){
+    //     aLi[i].onclick = function () {
+    //         console.log(this.innerHTML);
+    //     }
+    // }
+    oBtn.onclick = function () {
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        // oLi.onclick = function () {
+        //     console.log(this.innerHTML);
+        // }
+        oUl.appendChild(oLi);
+    }
+</script>
+
+</body>
+</html>
