@@ -5,23 +5,51 @@
     <title>Title</title>
 </head>
 <body>
+
 <input type="text" id="ipt">
+
 <ul>
     <li>iphone8</li>
     <li>huawei</li>
     <li>xiaomi</li>
     <li>iphoneX</li>
 </ul>
+
+
+<input type="text" value="ttt">
+<input type="hidden" value="sss">
+<input type="button" disabled="disabled" value="提交">
+<select name="" id="">
+    <option >黑大</option>
+    <option selected="selected">理工</option>
+    <option >林大</option>
+    <option >农大</option>
+
+</select>
+<input type="checkbox" checked="checked" disabled="disabled">
+<input type="checkbox">
+
+
+
 <script src="jquery-1.12.4.js"></script>
 <script>
 
 
     $(function () {
+        $(':button:disabled').val('注册');
+        $('input[type="text"]').css('background','red');
+
+
         $('#ipt').on('keyup',function () {
             // console.log($(this).val());
             var value = $(this).val();
             $('li').css('background','');
-            $('li:contains('+value+')').css('background','red')
+            if(value !== ''){
+                $('li:contains('+value+')').css('background','red')
+            }
+
+
+
 
         });
 
