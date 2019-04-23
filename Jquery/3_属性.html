@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            padding: 2px;
+            border: 1px solid;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="aa">
+
+    </div>
+<!--<ul>-->
+    <!--<li>11</li>-->
+    <!--<li>22/li>-->
+    <!--<li>33</li>-->
+<!--</ul>-->
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+         var oDiv = document.getElementById('div1');
+        // oDiv.xx = 'yy';//不显示
+         // oDiv.setAttribute('xx','yy');//可以显示出来
+
+        $(function () {
+            // console.log($('li').outerHeight());//括号内加true，包括margin,  不加true，不包括margin
+
+
+            // $('#div1').addClass('bb');
+            // $('#div1').removeClass('bb');
+            // $('#div1').css('width',function () {
+            //     var a = 100,b = 200;
+            //     return a + b;
+            // });
+
+
+           // $('#div1').attr('xx','c1');//可以显示
+           // $('#div1').prop('yy','c2') ;//不显示
+           //
+           //  console.log($('#div1').prop('yy'));
+           //  console.log($('#div1').attr('xx'));
+           //
+
+        })
+
+
+    </script>
+
+</body>
+</html>
