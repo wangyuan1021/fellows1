@@ -12,9 +12,12 @@
     </style>
 </head>
 <body>
-    <div id="div1" class="aa">
-
+    <div id="div2">
+        <div id="div1" class="aa">
+            <p>pppp</p>
+        </div>
     </div>
+
 <!--<ul>-->
     <!--<li>11</li>-->
     <!--<li>22/li>-->
@@ -24,10 +27,25 @@
     <script src="jquery-1.12.4.js"></script>
     <script>
          var oDiv = document.getElementById('div1');
+         var oDiv2 = document.getElementById('div2');
+
+         // oDiv2.appendChild(oDiv.cloneNode());//只克隆了div1，里面的p标签并没有克隆
+
+
+
         // oDiv.xx = 'yy';//不显示
          // oDiv.setAttribute('xx','yy');//可以显示出来
 
         $(function () {
+            $('#div1').click(function () {
+                console.log(11111);
+            });
+
+            // $('#div2').append($('#div1').clone());//这个，里面的元素也克隆了，两个参数默认false
+            $('#div2').append($('#div1').clone(true));//true，里面的函数也克隆了
+
+
+
             // console.log($('li').outerHeight());//括号内加true，包括margin,  不加true，不包括margin
 
 
