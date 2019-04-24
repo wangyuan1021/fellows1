@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>111</li>
+    <li>222</li>
+    <li class="li3">333</li>
+    <li>444</li>
+</ul>
+<div>
+    <h1 class="li3">h1h1h1h1h1</h1>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    // $('li').eq(0).css('background','red');
+
+    // $('li').slice(2,3).css('background','red');
+
+    // $('li').filter('.li3').add('h1').css('background','red');//
+    // $('li').filter('.li3').andSelf().css('background','red');
+
+    //
+    // var xxx= $('li').map(function () {
+    //     return $(this).text();
+    // });
+    // console.log(xxx.get(0));
+
+    $('ul').find('.li3').css('background','red').end().css('background','blue');//find找后代
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
