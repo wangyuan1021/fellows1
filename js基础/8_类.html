@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    function Person(){
+        this.name = 'zs';
+    }
+    Person.prototype.say = function () {
+        console.log(this.name);
+    };
+
+    var p = new Person();
+    p.say();
+
+    var p1 = new Person();
+    p1.say();
+
+    function Son() {
+
+    }
+    Son.prototype = new Person();
+    var s = new Son();
+    s.say();
+
+</script>
+
+<script>
+
+
+
+</script>
+</body>
+</html>

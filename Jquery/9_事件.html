@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="div1">div1</div>
-
+<input type="text" id="ipt">
 <script src="jquery-1.12.4.js"></script>
 <script>
     var fn = function () {
@@ -14,6 +14,16 @@
     };
     // $('#div1').on('click',fn);
     // $('#div1').off('click',fn);
+
+    //健值
+    $('#ipt').keyup(function (e) {
+        console.log(e.which);
+    });
+    //鼠标值
+    $('#ipt').mousedown(function (e) {
+        console.log(e.which);
+    });
+
 
     $('#div1').on('click',fn);
     $('#div1').trigger('click');//扳机，直接触发
