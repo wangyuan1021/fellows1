@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--<p v-if="msg">-->
+      <!--ppppp-->
+    <!--</p>-->
+
+
+    <!--<p v-if="xx == 'A'">-->
+        <!--ppppp-->
+    <!--</p>-->
+    <!--<h1 v-else-if="xx == 'B'">-->
+        <!--hhhh-->
+    <!--</h1>-->
+    <!--<span v-else>-->
+        <!--span-->
+    <!--</span>-->
+
+
+    <!--只显示里面的内容，自己本身不显示，用template-->
+    <template v-if="msg">
+        <p>ppp</p>
+        <p>ppppp</p>
+        <h1>h1h1h1h1</h1>
+    </template>
+
+
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',//挂载元素
+        data:{
+            msg: false,
+            xx:'A'
+        }
+    });
+
+
+
+    // MVC
+    // model  view controller
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--<li v-for="(val,index) in arr">-->
+            <!--{{val}},{{index}}-->
+        <!--</li>-->
+
+        <!--<li v-for="i in 3">-->
+            <!--{{i}},{{msg}}-->
+        <!--</li>-->
+
+
+        <li v-for="(val,index) in sortStu">
+            学生姓名是：{{val.name}},年龄是：{{val.age}},{{index}}
+        </li>
+
+
+
+        <!--<li v-for="(val,key,index) in obj">-->
+            <!--&lt;!&ndash;（值，键，索引）&ndash;&gt;-->
+            <!--{{index}}，{{val}}，{{key}}-->
+        <!--</li>-->
+    </ul>
+
+
+</div>
+<script src="vue.js"></script>
+<script>
+
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world',
+            arr:[111,222,333,444],
+            stuList:[{
+                name:'zs',
+                age:13
+            },{
+                name:'lisi',
+                age:12
+            },{
+                name:'wangwu',
+                age:38
+            }],
+            obj:{
+                a:1,
+                b:2,
+                c:3
+            }
+        },
+
+        //计算属性
+        computed:{
+            sortStu(){
+                 // console.log(this);
+                 return this.stuList.sort(function (a,b) {
+                     return a.age-b.age;
+                 });
+            }
+        }
+    })
+</script>
+</body>
+</html>
