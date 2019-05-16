@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width:400px;
+            height:400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 300px;
+            height: 200px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--<button v-on:click="fun">click</button>-->
+    <button @click="fun(2,$event)">click</button>    <!--通常简写形式-->
+        {{msg}}
+
+    <div id="div1" @click="click1">
+        <div id="div2" @click.stop="click2"></div>
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg:0
+        },
+        methods:{
+            fun(a,e){
+                this.msg +=a;
+                console.log(e);
+
+                // 或者下面，不用在上面传$event,直接event
+                console.log(event);
+            },
+            click1(){
+                console.log(111);
+            },
+            click2(){
+                console.log(222);
+                // event.stopPropagation();//阻止事件传播
+                    // event.preventDefault();//阻止默认行为
+
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -6,20 +6,25 @@
 </head>
 <body>
 <script>
+    // var arr = [2,5,7,3,1,11];
+    // arr.sort(function (a,b) {
+    //     return a-b;   //b-a就是降序
+    // });
+    // console.log(arr);//改变原数组的顺序
+
+
+    // var arr = [{age:13},{age:12},{age:18}];
+    // arr.sort(function (a,b) {
+    //     return a.age-b.age;   //b-a就是降序
+    // });
+    // console.log(arr);//改变原数组的顺序
+
+
     var arr = [2,5,7,3,1,11];
     arr.sort(function (a,b) {
-        return a-b;   //b-a就是降序
+        return Math.random()-0.5;//乱序
     });
-    console.log(arr);//改变原数组的顺序
-
-
-    var arr = [{age:13},{age:12},{age:18}];
-    arr.sort(function (a,b) {
-        return a.age-b.age;   //b-a就是降序
-    });
-    console.log(arr);//改变原数组的顺序
-
-
+    console.log(arr);
 
 </script>
 </body>
