@@ -45,6 +45,7 @@
                  var newArr = this.arr.filter((elem,index)=> {
                      return elem.value.indexOf(this.val) !=-1;
                  });
+                 //因为这里的this，所以改成箭头函数
                  this.showArr = newArr;
              }
          }
