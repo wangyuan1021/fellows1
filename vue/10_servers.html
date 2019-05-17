@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 400px;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            height: 50px;
+            margin-bottom: 10px;
+            background: green;
+            line-height: 50px;
+            padding: 0 20px;
+
+        }
+        span{
+            float: right;
+        }
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>servers</h1>
+    <ul>
+        <li v-for="(obj,index) in arr" :class="{red:obj.active}" @click="fun(obj)">
+            {{obj.name}}    <span>{{obj.price}}</span>
+        </li>
+    </ul>
+    <hr>
+    total:   <span>{{total}}</span>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            arr:[
+                {name:'aaa',price:123,active:false},
+                {name:'bbb',price:234,active:false},
+                {name:'ccc',price:444,active:false},
+                {name:'ddd',price:667,active:false},
+                {name:'eee',price:789,active:false}
+            ],
+            // total:0,
+        },
+        methods:{
+            // fun(index){
+            //    this.arr[index].active=!this.arr[index].active;
+            // },
+
+            fun(obj){
+                obj.active=!obj.active;//把这句话直接放在上面也行
+
+
+                // if( obj.active){
+                //     this.total +=obj.price;
+                // }else{
+                //     this.total -=obj.price;
+                // }
+            }
+        },
+
+        //第二种方法
+        computed:{
+            total(){
+                let sum = 0;
+                this.arr.forEach(function (elem,index){
+                    if(elem.active){
+                        sum +=elem.price;
+                    }
+                })
+                return sum;
+            }
+        }
+        //计算属性和函数的区别是有一个缓存
+
+    })
+
+
+</script>
+</body>
+</html>
