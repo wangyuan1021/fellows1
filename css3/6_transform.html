@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            perspective: 800px;//视角，屏幕距离眼球的距离
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            margin-left: 200px;
+            /*margin-top: 200px;*/
+            /*transform: scale(2);//缩小放大*/
+            /*transform: skew(30deg,45deg);//扭曲x,y轴*/
+            border: 1px solid;
+            /*transform: translateZ(100px);//平移*/
+            /*transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg);*/
+            /*transition: all 1s linear;*/
+            animation: xxx 2s linear;
+        }
+        @keyframes xxx {
+            0%{
+
+            }
+            50%{
+                background: #00ff00;
+                font-size: 50px;
+            }
+            100%{
+                transform: translateZ(100px) rotate(30deg);
+            }
+        }
+        /*#div1:hover{*/
+            /*transition: all 1s linear 2s;*/
+            /*transform: translateZ(100px) rotate(30deg);*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="div1">
+    div
+</div>
+</body>
+</html>
