@@ -14,8 +14,9 @@
      <input type="text" @keyup="search" v-model="val">
      <button @click="add">add</button>
      <ul>
-         <li v-for="xx in showArr" :class="{red:xx.active}" @click="red(xx)">
+         <li v-for="(xx,index) in showArr" :class="{red:xx.active}" @click="red(xx)">
              {{xx.value}}
+             <button @click="del(index)">del</button>
          </li>
      </ul>
  </div>
@@ -47,6 +48,10 @@
                  });
                  //因为这里的this，所以改成箭头函数
                  this.showArr = newArr;
+             },
+             del(index){
+                 this.arr.splice(index,1);//在vue里超级好用
+
              }
          }
      })
