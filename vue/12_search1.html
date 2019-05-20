@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+ <div id="app">
+     <input type="text" @keyup="search" v-model="val">
+     <button @click="add">add</button>
+     <ul>
+         <li v-for="xx in arr" :class="{red:xx.active}" @click="red(xx)" v-show="xx.isShow">
+             {{xx.value}}
+         </li>
+     </ul>
+ </div>
+ <script src="vue.js"></script>
+ <script>
+     var vm = new Vue({
+         el:'#app',
+         data:{
+             arr:[],
+             val:'',
+         },
+
+         methods:{
+             add(){
+                 this.arr.push({value:this.val,active:false,isShow:true});
+                 this.val='';
+
+                 // 第二种方法
+                 this.arr.forEach((elem)=>{
+                     elem.isShow = true;
+                 });
+
+
+                 this.arr.sort(function (a,b) {
+                     return a.value-b.value;
+                 });
+             },
+             red(xx){
+                 xx.active = !xx.active;
+             },
+             search(){
+                 //第二种方法
+                 this.arr.forEach((elem)=>{
+                     elem.isShow = true;
+                 });
+
+                 this.arr.forEach((elem)=> {
+                     if(elem.value.indexOf(this.val) ==-1){
+                         elem.isShow = false;
+                     }
+                 })
+
+
+                 // var newArr = this.arr.filter((elem,index)=> {
+                 //     return elem.value.indexOf(this.val) !=-1;
+                 // });
+                 // //因为这里的this，所以改成箭头函数
+                 // this.showArr = newArr;
+             }
+         }
+     })
+ </script>
+</body>
+</html>
