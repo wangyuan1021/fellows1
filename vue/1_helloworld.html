@@ -8,7 +8,9 @@
 
 <!--第一个指令：v-text-->
 <!--第二个指令：v-html-->
-<div id="app" v-text="xx">
+<!--<div id="app" v-text="xx">-->
+    <div id="app" v-html="xx">
+
     <!--{{msg}}-->
 
     <!--一般用大括号的形式-->
@@ -18,7 +20,9 @@
     var vm = new Vue({
         el:'#app',
         data:{
-            xx:'hello world'
+            // xx:'hello world'
+            xx:'<h1>hello world</h1>'
+
         }
     });
 
