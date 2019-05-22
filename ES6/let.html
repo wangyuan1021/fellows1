@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+</ul>
+<script>
+    //ECMAScript      javaScript
+    //ES6  2015/6  ES2015
+
+
+    //定义变量的关键字
+    //let没有变量提升，不能重复声明，暂时性死区(临时实效区)
+
+    // let a = 1;
+    // a = 2;
+
+    // let没有变量提升
+    // console.log(a);
+    // let a = 11;
+
+    // b是全局变量
+    // function fn() {
+    //     var a = b = 1;
+    //     console.log(a);
+    // }
+    // fn();
+    // // console.log(a);
+    // console.log(b);
+
+
+
+    // var a = 2;
+    // function fn() {
+    //     console.log(a);
+    //     var a = 1;
+    // }
+    // fn();  //a变量提升 undefined
+
+    //暂时性死区
+    // var a = 2;
+    // function fn() {
+    //     console.log(a);
+    //     let a = 1;
+    // }
+    // fn();
+
+    // for(var i=0;i<5;i++){
+    //     console.log(i);
+    // }
+    // console.log(i);  //i=5
+
+    // 块级作用域
+    // for(let i=0;i<5;i++){
+    //     console.log(i);
+    // }
+    // console.log(i);//i获取不到
+
+    // {
+    //     let a = 1;
+    // }
+    // console.log(a);//a 获取不到
+
+    // var aLi = document.getElementsByTagName('li');
+    //
+    // for(var i=0;i<aLi.length;i++){
+    //     aLi[i].index = i;
+    //     aLi[i].onclick = function () {
+    //         console.log(this.index);
+    //     }
+    // }
+
+    // var aLi = document.getElementsByTagName('li');
+    //
+    // for(let i=0;i<aLi.length;i++){
+    //
+    //     aLi[i].onclick = function () {
+    //         console.log(i);
+    //     }
+    // }
+    //一个外部函数里面声明了一个内部函数，内部函数里面调用了外部函数的局部变量，这个时候，局部变量不被释放
+    // 闭包
+    // function f1() {
+    //     var n = 100;
+    //     function f2() {
+    //         console.log(n);
+    //     }
+    //     return f2;
+    // }
+    // var result = f1();
+    // result();
+
+    //函数立即调用
+    (function () {
+        console.log(1111);
+    })();
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
