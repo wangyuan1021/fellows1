@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+</ul>
+<script>
+    //箭头函数
+
+    //方法一
+    // var aLi = document.getElementsByTagName('li');
+    // for(var i=0;i<aLi.length;i++){
+    //     aLi[i].onclick = function () {
+    //         var that = this;
+    //         setTimeout(function () {
+    //             // console.log(this);   //window
+    //             console.log(that.innerHTML);
+    //         },1000);
+    //     }
+    // }
+
+    //方法二
+    // var aLi = document.getElementsByTagName('li');
+    // for(var i=0;i<aLi.length;i++){
+    //     aLi[i].onclick = function () {
+    //         // var that = this;
+    //         setTimeout(()=> {
+    //             // console.log(this);   //匿名函数this指的是window
+    //             console.log(this.innerHTML);
+    //         },1000);
+    //     }
+    // }
+    //区别1：箭头函数里面的this是定义时指向
+    //普通函数里面的this是运行时指向
+
+
+    // var fn = (a,b)=>{
+    //     console.log(a,b);
+    // };
+    // fn(1,2);
+
+    // function fn() {
+    //     console.log(arguments[0]);
+    // }
+    // fn(1);
+
+
+
+    //区别2：箭头函数没有arguments
+    // var fn = ()=>{
+    //     console.log(arguments[0]);
+    // }
+    // fn(1);
+
+    // 区别3：箭头函数里没有constructor
+
+    //普通函数
+    // function User() {
+    //     this.name = 'zx';
+    // }
+    // var u = new User();
+    // console.log(u.name);
+
+    // 箭头函数
+    // var User = ()=>{
+    //     this.name = 'zx';
+    // };
+    // var u = new User();
+    // console.log(u.name);
+
+</script>
+</body>
+</html>
