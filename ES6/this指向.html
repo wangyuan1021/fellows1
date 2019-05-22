@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //1 箭头函数能够改变this指向
+    // 2 call,apply能够改变this指向
+    function fn(a,b) {
+        console.log(a,b);
+        console.log(this);
+    }
+    var o = {
+        name:'zx'
+    };
+    // fn.call(o,1,2);
+    // fn.apply(o,[1,2]);//后面是数组传参
+
+    var f = fn.bind(o,1,2);//改变this指向，返回一个新的函数，然后调用新的函数
+    f();
+
+
+
+
+
+
+</script>
+</body>
+</html>
