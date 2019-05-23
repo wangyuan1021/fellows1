@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // var set = new Set();
+    // set.add('123');
+    // set.add(123);
+    // set.add(true);
+    // set.add(123);//不能重复
+
+    // console.log(set);
+    // console.log(set.size);
+
+    // for(var k of set){
+    //     console.log(k);
+    // }
+
+    // var keys = set.keys();
+    // console.log(keys);
+    // var values = set.values();
+    // console.log(values);
+    // 健、值相同
+    // var entries = set.entries();
+    // for(var key of entries){
+    //     console.log(key)
+    // }
+
+
+    //第一种
+    // var arr = [1,2,32,3,4,5,3,2];
+    // var newArr = [];
+    // for(var i=0;i<arr.length;i++){
+    //     if(newArr.indexOf(arr[i]) == -1){
+    //         newArr.push(arr[i]);
+    //     }
+    // }
+    // console.log(newArr);
+
+
+    //第二种
+    // var arr = [1,2,32,3,4,5,3,2];
+    // var obj = {};
+    // var newArr = [];
+    // for(var i=0;i>arr.length;i++){
+    //     if(!obj[arr[i]]){
+    //         newArr.push(arr[i]);
+    //         obj[arr[i]] = true;
+    //     }
+    // }
+    // console.log(newArr);
+
+    //第三种set,能够去重
+    var arr = [1,2,32,3,4,5,3,2];
+    var s = new Set(arr);
+    console.log(Array.from(s));
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

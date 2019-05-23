@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+        var m =new Map();
+        m.set('a',1223);
+        m.set(1,'113');
+        m.set(true,'xxx');
+        m.set(undefined,'xxx');
+        m.set(null,'x');
+        m.set(NaN,'aa');
+        var arr =  [1,2];
+        var obj = {};
+        m.set(arr,'yy');
+        m.set(obj,'yy');
+
+        console.log(m.size);
+        console.log(m.get(obj));
+
+
+</script>
+</body>
+</html>
