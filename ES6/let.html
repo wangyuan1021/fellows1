@@ -98,10 +98,21 @@
     // result();
 
     //函数立即调用
-    (function () {
-        console.log(1111);
-    })();
+    // (function () {
+    //     console.log(1111);
+    // })();
 
+    var aLi = document.getElementsByTagName('li');
+
+    for(var i=0;i<aLi.length;i++){
+        (function (index) {
+            aLi[index].onclick = function () {
+                console.log(index);
+            }
+        })(i);
+    }
+
+    //内存泄漏---内存溢出
 
 
 

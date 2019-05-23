@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//...
+//     var a1 = [1,2,3];
+//     var a2 = [...a1,4,5];
+//     console.log(a1);
+//     console.log(a2);
+
+    // var a = [1,2,3],b = [7,8,9];
+    // var c = [...a,...b];
+    // console.log(c);
+
+    // var a = [1,2,3,[4,5]],b = [7,8,9];
+    // var c = [...a[3],...b];
+    // console.log(c);
+
+    // var a = [1,2,3];
+    // var b=a;
+    // b[1] = 4;
+    // console.log(a);
+    // console.log(b);//都改变了
+
+
+
+    // 克隆
+    // 方法一
+    // var a = [1,2,3];
+    // var b=[...a];
+    // b[1] = 4;
+    // console.log(a);//a不变
+    // console.log(b);
+
+    //方法二
+    // var a = [1,2,3];
+    // var b=a.concat([]);//连接
+    // b[1] = 4;
+    // console.log(a);//a不变
+    // console.log(b);
+
+
+    // var a = [1,2,3];
+    // var b=a.concat([4,5,6]);//连接
+    // b[1] = 4;
+    // console.log(a);//a不变
+    // console.log(b);
+
+
+
+    //rest
+    //传的参数不定时
+    // var fn = (...args)=>{
+    //     console.log(args[0],args[1],args[2]);
+    // };
+    // fn(1,2,3);
+
+
+    // 对象
+    // var o1 = {
+    //     a:1,
+    //     b:2
+    // };
+    // var o2 = {
+    //     c:3
+    // };
+    // var obj = {
+    //     ...o1,
+    //     ...o2
+    // };
+    // console.log(obj);
+
+    var xxx = {d:4};
+    var o1 = {
+        a:xxx,
+        b:2
+    };
+    var o2 = {
+        c:3
+    };
+    var obj = {
+        ...o1,
+        ...o2
+    };
+    console.log(obj);
+    obj.a.d = 5;
+    console.log(obj);
+    console.log(o1);
+
+</script>
+</body>
+</html>
