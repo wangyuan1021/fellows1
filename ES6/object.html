@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var n = 'xxxx';
+    // var str = 'my';
+    // // var myName = 'ssssss';//动态属性和简写不能一起写,会报错
+    //
+    // //对象属性的简写....同名变量的值
+    // var obj = {
+    //     n,
+    //     age:12,
+    //     [str + 'Name']:'this is a name'
+    // };
+    //  console.log(obj);
+
+
+   //  var o1 ={age:12};
+   //  var obj = {
+   //      a:o1,
+   //      b:2
+   //  };
+   // console.log(Object.assign(obj,{c:3,b:5},{d:4}));
+   // obj.a.age = 15;
+   // console.log(obj,o1);//obj变,o1变
+
+
+
+
+    // console.log(-0===+0);//true
+    // console.log(NaN==NaN);//false
+    //
+    //
+    // // Object.is相当于三个等号，但只有下面两个发生了改变
+    // console.log(Object.is(-0,+0));//false
+    // console.log(Object.is(NaN,NaN));//true
+
+    // var arr = [1,2,3,4,NaN,3,2,5];
+    // Array.prototype.io = function(n){
+    //     for(var i=0;i<arr.length;i++){
+    //         if(n === arr[i]){
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // };
+    // console.log(arr.io(NaN));//-1  找不到
+
+    var arr = [1,2,3,4,NaN,3,2,5];
+    Array.prototype.io = function(n){
+        for(var i=0;i<this.length;i++){
+            if(Object.is(n,arr[i])){
+                return i;
+            }
+        }
+        return -1;
+    };
+    console.log(arr.io(NaN));//4,找得到
+
+
+
+
+</script>
+</body>
+</html>

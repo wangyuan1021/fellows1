@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var str = '123.4abc';
+    console.log(parseInt(str));
+    //模块化，避免污染全局
+    Number.parseInt();
+    Number.parseFloat();
+
+    console.log(isNaN('ss'));//true,判断是不是非数
+    console.log(Number.isNaN('ss'));//判断是不是NaN,false
+
+    console.log(Number.isFinite(7));
+
+
+    console.log(Math.sign(8));//判断正负，1 0 -1
+    console.log(Math.trunc(5.5));//取整
+
+    console.log(Math.ceil(5.01));//向上取整
+
+
+
+
+
+</script>
+</body>
+</html>

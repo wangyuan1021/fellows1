@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+<script>
+
+    // var aLi = document.getElementsByTagName('li');//不是真的数组，类数组
+    // console.log(aLi);
+    // console.log(Array.from(aLi));
+    //
+    // var arr = Array.from(aLi);
+    // arr.push('111');
+    // console.log(arr);
+
+
+    //把类数组转为真数组
+
+    // var obj = {
+    //     0:0,
+    //     1:1,
+    //     2:2,
+    //     5:5,
+    //     length:8
+    // };
+    // console.log(Array.from(obj));
+    //
+    //
+    // var arr = [
+    //     [12,4],
+    //     [3,4],
+    //     ['abc',4]
+    // ];
+    // var m = new Map(arr);
+    // console.log(m);
+    // console.log(Array.from(m));
+
+
+    // var arr = new Array(3);
+    // var arr = new Array(3,4);
+    // var a1 = [3];//最常用
+    // console.log(a1);
+
+    // //新增的定义一个值的数组方式
+    // var arr = Array.of(3);
+    // console.log(arr);
+    //
+
+
+    // var arr = new Array(3,3,3,8,3,5);
+    // arr.fill(10);
+    // console.log(arr);
+
+    // arr.fill(10,3,4);//从第三个开始到第四个，不包括第四个
+    // console.log(arr);
+
+    // arr.fill(10,3,-1);//从第三个开始到-1个，不包括-1
+    // console.log(arr);
+
+    // var arr = new Array(3,3,3,8,3,5).fill(10);
+    // console.log(arr);
+
+    var arr = [1,2,3,4,5,6,7];
+
+    //没有返回值
+    // console.log(arr.forEach(function (xx,index) {
+    //     console.log(xx,index);
+    // }));
+
+
+    // 有返回值
+    // console.log(arr.map(function (xx,index) {
+    //     if(index > 3){
+    //         return xx +5;
+    //     }else{
+    //         return xx +1;
+    //     }
+    // }));
+    // console.log(arr);//原数组没变
+    
+
+    //过滤出来满足条件的，返回的还是原来的
+    console.log(arr.filter(function (xx,index) {
+        xx +=10;
+        return xx > 3;
+    }));
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
