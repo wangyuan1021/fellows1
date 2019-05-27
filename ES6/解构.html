@@ -10,6 +10,37 @@
     // var [x,y,z] = arr;
     // console.log(x,y,z);
 
+    // var arr = [1,undefined,3];
+    // var [x,y=10,z] = arr;//数组里面的值为undefined时候
+    // console.log(x,y,z);
+
+    var arr = [1,2,3,[4,5]];
+    // var [x,y=10,z,s=5] = arr;//数组里面的值为undefined时候,才是初始值
+    // console.log(x,y,z,s);
+
+    // var [a,b,c,[d,e]] = arr;
+    // console.log(a,b,c,d,e)
+    // var [a,,c] = arr;
+    // console.log(a,c);
+
+    //两个数交换
+    // 方法一
+    var a = 2,b = 1;
+    // a = a + b;
+    // b = a - b;
+    // a = a - b;
+    // console.log(a,b)
+
+    //方法二
+    // var[b,a] = [a,b];
+    // console.log(a,b);
+
+    // 方法三
+    // b = [a,a=b][0];
+    // console.log(a,b);
+
+
+
 
 
 
