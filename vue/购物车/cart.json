@@ -1,0 +1,27 @@
+{
+ "result": {
+   "totalMoney": 59,
+   "productList": [
+     {
+       "productId": 111,
+       "productName": "黄鹤楼",
+       "productPrice": 19,
+       "productQuentity":1,
+       "productImg":"img.jpg",
+       "parts":[
+         {
+           "partsId": "10001",
+           "partsName": "打火机"
+         },
+         {
+           "partsId": "10002",
+           "partsName": " 苹果皮"
+         }
+       ]
+     },
+     {
+       "productId":222
+     }
+   ]
+ }
+}
