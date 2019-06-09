@@ -1,7 +1,6 @@
 /*这是一个多行注释，在压缩下没有*/
 //这是一个单行注释，不出现在css里面
 /*!这是一个强制注释，压缩下有*/
-
 $color:#f00;
 #div1{
   background: $color;
@@ -9,7 +8,27 @@ $color:#f00;
 }
 #div2{
   font-size: 16px;
-  .a1{
-    width: 10px;
+  a{
+    width: 20px;
+    &:hover{
+      color:red;
+    }
+    &-test{
+      height: 10px;
+    }
+  }
+}
+
+#div3{
+  background: {
+
+    size:cover;
+    position: left,center;
+  }
+  border:{
+    top:{
+      color:#f00;
+      style:solid;
+    }
   }
 }
