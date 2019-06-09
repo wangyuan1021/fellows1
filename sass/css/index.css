@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*这是一个多行注释，在压缩下没有*/
+/*!这是一个强制注释，压缩下有*/
+#div1 {
+  background: #f00;
+  color: #f00;
+}
+
+#div2 {
+  font-size: 16px;
+}
+#div2 .a1 {
+  width: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */
