@@ -1,9 +1,22 @@
 @charset "UTF-8";
 /*这是一个多行注释，在压缩下没有*/
 /*!这是一个强制注释，压缩下有*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 #div1 {
-  background: #f00;
-  color: #f00;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 #div2 {
@@ -24,6 +37,84 @@
   background-position: left,center;
   border-top-color: #f00;
   border-top-style: solid;
+  border-top-width: 30px;
+}
+
+#div4 {
+  width: 200px;
+  height: 200px;
+  background: #ccc;
+}
+
+#div5, #div6 {
+  width: 300px;
+  height: 300px;
+  background: #0f0;
+}
+#div5 a, #div6 a {
+  font-size: 12px;
+}
+
+#div6 {
+  color: #000;
+}
+
+#div7 {
+  color: rgba(51, 51, 51, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#div8 {
+  color: #fff;
+  border: #fff, #000;
+}
+
+.cl-1 {
+  width: 1px;
+}
+
+.cl-2 {
+  width: 2px;
+}
+
+.cl-3 {
+  width: 3px;
+}
+
+.cl-4 {
+  width: 4px;
+}
+
+.cl-5 {
+  width: 5px;
+}
+
+.cl-1 {
+  width: 1px;
+}
+
+.cl-2 {
+  width: 2px;
+}
+
+.cl-3 {
+  width: 3px;
+}
+
+.cl-4 {
+  width: 4px;
+}
+
+.div1 {
+  width: 100px;
+}
+
+.div1 {
+  width: 100px;
+}
+
+#div10 {
+  width: 2px;
 }
 
 /*# sourceMappingURL=index.css.map */
