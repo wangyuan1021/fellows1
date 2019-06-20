@@ -4,7 +4,7 @@ module.exports = {
     mode:'development',
     //入口文件配置项
     entry:{
-        'xx': "./src/index.js"
+        'index': "./src/index.js"
     },
     //出口文件的配置项
     output:{
@@ -27,7 +27,6 @@ module.exports = {
         compress:true,
         //配置服务端口
         port:8081
-
     }
 
 }
