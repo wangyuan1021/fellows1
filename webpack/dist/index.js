@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var oDiv1 = document.getElementById('div1');\r\noDiv1.innerHTML = 'hello word';\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var oDiv1 = document.getElementById('div1');\r\noDiv1.innerHTML = 'hello word11112';\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
