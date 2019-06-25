@@ -11,7 +11,8 @@ module.exports = {
     //出口文件的配置项
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].js'
+        filename:'[name].js',
+        publicPath:'http://localhost:8081/'
     },
     //模块：例如解读css，图片如何转换，压缩
     module:{
@@ -19,6 +20,21 @@ module.exports = {
             {
                 test:/\.css$/,
                 use:['style-loader','css-loader']
+            },{
+                test:/\.(png|jpg|gif)$/i,
+                use:[{
+                       loader:'url-loader',
+                    options:{
+                           limit:500,
+                           outputPath:'images/'
+                    }
+
+                    }]
+            },{
+                test:/\.(html|htm)$/i,
+                loader:'html-withimg-loader'
+
+
             }
         ]
     },
@@ -49,7 +65,7 @@ module.exports = {
         //设置基本目录结构
         contentBase: path.resolve(__dirname,'dist'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'127.0.0.1',
+        host:'localhost',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口
