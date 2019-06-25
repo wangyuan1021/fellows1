@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     mode:'development',
     //入口文件配置项
@@ -19,7 +20,11 @@ module.exports = {
         rules:[
             {
                 test:/\.css$/,
-                use:['style-loader','css-loader']
+                // use:['style-loader','css-loader'],
+                use: ExtractTextWebpackPlugin.extract({
+                    fallback:"style-loader",
+                    use:"css-loader"
+                })
             },{
                 test:/\.(png|jpg|gif)$/i,
                 use:[{
@@ -34,7 +39,16 @@ module.exports = {
                 test:/\.(html|htm)$/i,
                 loader:'html-withimg-loader'
 
-
+            },{
+                test:/\.scss$/,
+                // use:["style-loader","css-loader","sass-loader"],
+                use: ExtractTextWebpackPlugin.extract({
+                    use:[{
+                        loader: "css-loader"
+                    },{
+                        loader: "sass-loader"
+                     }], fallback: "style-loader"
+                })
             }
         ]
     },
@@ -49,7 +63,8 @@ module.exports = {
                 },
                 hash:true,
                 template:'./src/index.html'
-            })
+            }),
+        new ExtractTextWebpackPlugin("css/index.css")
         // new HtmlWebpackPlugin({
         //     filename:'index2.html',
         //     chunks:['index2'],
