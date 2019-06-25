@@ -5,8 +5,8 @@ module.exports = {
     mode:'development',
     //入口文件配置项
     entry:{
-        'index': "./src/index.js",
-        'index2':"./src/index2.js"
+        'index': "./src/index.js"
+        // 'index2':"./src/index2.js"
     },
     //出口文件的配置项
     output:{
@@ -14,7 +14,14 @@ module.exports = {
         filename:'[name].js'
     },
     //模块：例如解读css，图片如何转换，压缩
-    module:{},
+    module:{
+        rules:[
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+            }
+        ]
+    },
     //插件：用于生产模板和各项功能
     plugins:[
 
@@ -26,16 +33,16 @@ module.exports = {
                 },
                 hash:true,
                 template:'./src/index.html'
-            }),
-        new HtmlWebpackPlugin({
-            filename:'index2.html',
-            chunks:['index2'],
-            minify:{
-                removeAttributeQuotes:true
-            },
-            hash:true,
-            template:'./src/index2.html'
-        })
+            })
+        // new HtmlWebpackPlugin({
+        //     filename:'index2.html',
+        //     chunks:['index2'],
+        //     minify:{
+        //         removeAttributeQuotes:true
+        //     },
+        //     hash:true,
+        //     template:'./src/index2.html'
+        // })
     ],
    // 配置webpack开发服务功能
     devServer:{
