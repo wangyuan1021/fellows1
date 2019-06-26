@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const PurifycssWebpack = require('purifycss-webpack');
 const entry = require("./webpack_config/entry_config.js");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode:'development',
     //入口文件配置项
@@ -96,7 +97,11 @@ module.exports = {
         new webpack.BannerPlugin('yuanyuan'),
         new webpack.ProvidePlugin({
             $:"jquery"
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: __dirname + '/src/public',
+            to: './public'
+        }])
     ],
    // 配置webpack开发服务功能
     devServer:{

@@ -117,7 +117,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function($) {\n\nvar _style = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n\nvar _style2 = _interopRequireDefault(_style);\n\nvar _style3 = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n\nvar _style4 = _interopRequireDefault(_style3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import $ from 'jquery';\n\n// var oDiv1 = document.getElementById('div1');\n// oDiv1.innerHTML = 'hello word11111111';\n\n$('#div1').html('yuanyuan');\n\n// let a = 10;\n// let b = (c)=>{\n//     console.log(c);\n// };\n// b(a);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("/* WEBPACK VAR INJECTION */(function($) {\n\nvar _style = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n\nvar _style2 = _interopRequireDefault(_style);\n\nvar _style3 = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n\nvar _style4 = _interopRequireDefault(_style3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import $ from 'jquery';\nvar weichuang = __webpack_require__(/*! ../weichuang.json */ \"./weichuang.json\");\n\n// var oDiv1 = document.getElementById('div1');\n// oDiv1.innerHTML = 'hello word11111111';\n\n$('#div1').html('yuanyuan' + weichuang.boss + ',' + weichuang.age);\n\n// let a = 10;\n// let b = (c)=>{\n//     console.log(c);\n// };\n// b(a);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -129,6 +129,17 @@ eval("/* WEBPACK VAR INJECTION */(function($) {\n\nvar _style = __webpack_requir
 /***/ (function(module, exports) {
 
 eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/scss/style.scss?");
+
+/***/ }),
+
+/***/ "./weichuang.json":
+/*!************************!*\
+  !*** ./weichuang.json ***!
+  \************************/
+/*! exports provided: boss, age, default */
+/***/ (function(module) {
+
+eval("module.exports = {\"boss\":\"mr.dan\",\"age\":38};\n\n//# sourceURL=webpack:///./weichuang.json?");
 
 /***/ })
 
