@@ -2,4 +2,20 @@
     width: 200px;
     height: 200px;
     background-image: url(../img/weichuang.jpg);
+    transform:rotate(30deg);
+}
+.content{
+    width:200px;
+}
+.selected{
+    height:200px;
+}
+#div4{
+    color: #00ff00;
+}
+@keyframes xxx{
+
+}
+@media (max-height:500px){
+
 }

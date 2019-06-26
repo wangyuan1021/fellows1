@@ -1,14 +1,14 @@
 const path = require('path');
-
+const webpack = require("webpack");
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const PurifycssWebpack = require('purifycss-webpack');
+const entry = require("./webpack_config/entry_config.js");
 module.exports = {
     mode:'development',
     //入口文件配置项
-    entry:{
-        'index': "./src/index.js"
-        // 'index2':"./src/index2.js"
-    },
+    entry:entry,
     //出口文件的配置项
     output:{
         path:path.resolve(__dirname,'dist'),
@@ -23,12 +23,15 @@ module.exports = {
                 // use:['style-loader','css-loader'],
                 use: ExtractTextWebpackPlugin.extract({
                     fallback:"style-loader",
-                    use:"css-loader"
+                    use:[{
+                        loader:"css-loader",
+                        options:{importLoaders:1}
+                    },'postcss-loader']
                 })
             },{
                 test:/\.(png|jpg|gif)$/i,
                 use:[{
-                       loader:'url-loader',
+                    loader:'url-loader',
                     options:{
                            limit:500,
                            outputPath:'images/'
@@ -47,8 +50,20 @@ module.exports = {
                         loader: "css-loader"
                     },{
                         loader: "sass-loader"
-                     }], fallback: "style-loader"
+                     }],
+                    fallback: "style-loader"
                 })
+            },{
+                test:/\.(jsx|js)$/,
+                use:{
+                    loader:"babel-loader",
+                    options:{
+                        presets:[
+                            "es2015"
+                        ]
+                    }
+                },
+                exclude:/node_modules/
             }
         ]
     },
@@ -64,7 +79,7 @@ module.exports = {
                 hash:true,
                 template:'./src/index.html'
             }),
-        new ExtractTextWebpackPlugin("css/index.css")
+
         // new HtmlWebpackPlugin({
         //     filename:'index2.html',
         //     chunks:['index2'],
@@ -73,7 +88,15 @@ module.exports = {
         //     },
         //     hash:true,
         //     template:'./src/index2.html'
-        // })
+        // }),
+        new ExtractTextWebpackPlugin("css/index.css"),
+        new PurifycssWebpack({
+            paths: glob.sync(path.join(__dirname,'src/*.html'))
+        }),
+        new webpack.BannerPlugin('yuanyuan'),
+        new webpack.ProvidePlugin({
+            $:"jquery"
+        })
     ],
    // 配置webpack开发服务功能
     devServer:{
