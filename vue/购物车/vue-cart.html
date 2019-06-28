@@ -21,36 +21,37 @@
         </tr>
         </thead>
         <tbody id="product-list">
-        <tr>
-            <td><input type="checkbox" value="[object Object]"></td>
-            <td><img src="img/1.jpg" alt="" width="100"></td>
-            <td>黄鹤楼</td>
+        <tr v-for="p in p_list">
+            <td><input type="checkbox" v-model='checkList' :value="p"></td>
+            <td><img src="" alt="" width="100"></td>
+            <td>{{p.productName}}</td>
             <td>
                 <ul>
-                    <li>打火机</li>
-                    <li>苹果皮</li>
+                    <li v-for=" part in p.parts">
+                        {{part.partsName}}
+                    </li>
                 </ul>
             </td>
-            <td class="price">19</td>
+            <td class="price">{{p.productPrice}}</td>
             <td>
-                <button class="sub">-</button>
-                <input type="text">
-                <button class="add">+</button>
+                <button @click="sub(p)">-</button>
+                <input type="text" @blur='filter(p)'v-model="p.productQuentity">
+                <button @click="p.productQuentity ++">+</button>
             </td>
-            <td class="total-price">0</td>
+            <td class="total-price">{{p.productQuentity * p.productPrice}}</td>
             <td><a href="javascript:;" class="del">删除</a></td>
         </tr>
         </tbody>
         <tfoot>
         <tr>
             <td colspan="6"></td>
-        </tr>
         <td>
-            总计：<span id="total">0</span>
+            总计：<span id="total">{{total()}}</span>
         </td>
         <td>
             <button>结账</button>
         </td>
+        </tr>
         </tfoot>
     </table>
 </div>
@@ -58,14 +59,43 @@
 <script src="vue.js"></script>
 <script src="axios.min.js"></script>
 <script>
-    new Vue({
+   var vm =  new Vue({
         el:"#cart",
         data:{
+            p_list:[],
+            checkList:[]
 
         },
-        created(){
 
-        }
+        //自动调用
+        created(){
+            //返回的是promise对象
+            axios.get('cart.json').then((res)=>{
+                this.p_list = res.data.result.productList;
+            });
+        },
+       methods:{
+            // add(p){
+            //     p.productQuentity ++;
+            // },
+            sub(p){
+              if(p.productQuentity > 0){
+                  p.productQuentity --;
+              }
+            },
+           filter(p){
+                if(p.productQuentity){
+                     p.productQuentity = 0;
+                }
+           },
+           total(){
+                let num = 0;
+                this.checkList.forEach((elem)=>{
+                    num += (elem.productQuentity * elem.productPrice);
+                });
+               return num;
+           }
+       }
     })
 </script>
 </body>
