@@ -21,7 +21,7 @@
         </tr>
         </thead>
         <tbody id="product-list">
-        <tr v-for="p in p_list">
+        <tr v-for="(p,i) in p_list">
             <td><input type="checkbox" v-model='checkList' :value="p"></td>
             <td><img src="" alt="" width="100"></td>
             <td>{{p.productName}}</td>
@@ -39,7 +39,8 @@
                 <button @click="p.productQuentity ++">+</button>
             </td>
             <td class="total-price">{{p.productQuentity * p.productPrice}}</td>
-            <td><a href="javascript:;" class="del">删除</a></td>
+            <td><a href="javascript:;" @click="del(i,p)">删除</a></td>
+            <!--阻止跳转-->
         </tr>
         </tbody>
         <tfoot>
@@ -94,6 +95,10 @@
                     num += (elem.productQuentity * elem.productPrice);
                 });
                return num;
+           },
+           del(i,p){
+                this.p_list.splice(i,1);
+                this.checkList.splice(this.checkList.indexOf(p),1);
            }
        }
     })
