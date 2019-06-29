@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <demo x-msg="123" :yy="m1"> </demo>
+        <demo x-msg="455" :yy="m2"></demo>
+        {{msg}}
+    </div>
+
+    <!--<div id="app2">-->
+        <!--&lt;!&ndash;{{msg}}&ndash;&gt;-->
+        <!--<demo1></demo1>-->
+    <!--</div>-->
+
+    <script type="text/x-template" id="temp">
+        <div>
+            {{xMsg}}
+            <h1>{{yy}}</h1>
+        </div>
+    </script>
+<script src="vue.js"></script>
+<script>
+    // 全局组件
+    // Vue.component('demo',{
+    //     template:"<div>div1<h1>hhhhh</h1></div>"
+    // });
+
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'xx',
+            m1: 'haha',
+            m2: 'heheh'
+        },
+        //局部的组件
+        components:{
+            demo:{
+                template:"#temp",
+                props:['xMsg','yy']
+            }
+        }
+    });
+    // new Vue({
+    //     el:'#app2',
+    // components:{
+    //     demo1:{
+    //         template:"<div>div1<h1>hhhhh</h1></div>"
+    //     }
+    // }
+    // });
+
+
+</script>
+
+</body>
+</html>
