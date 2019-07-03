@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    count:11
+    count:11,
+    msg:'zxx'
   },
   mutations: {
     add(state,num){
@@ -17,6 +18,15 @@ export default new Vuex.Store({
 
   },
   actions: {
+    addNum({commit},num){
+      num++;
+      commit('add',num)
+    }
 
   },
+  getters:{
+    count100:(state)=>{
+      return state.count+100;
+    }
+  }
 });
