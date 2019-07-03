@@ -5,6 +5,13 @@ import Mine from './views/Mine.vue';
 import Test1 from './views/Test1.vue';
 import Test2 from './views/Test2.vue';
 import Error from './views/Error.vue';
+import Movie from './views/Movie.vue';
+import MovieDetail from './views/MovieDetail.vue';
+import ComponentA from './views/ComponentA.vue';
+import Vuex from './views/Vuex.vue';
+
+
+
 
 
 
@@ -53,7 +60,22 @@ export default new Router({
     {
       path:'*',
       component:Error
-
+    },
+    {
+      path:'/movie',
+      component:Movie
+    },
+    {
+      path:'/movieDetail/:movieId',
+      component:MovieDetail
+    },
+    {
+      path:'/componenta',
+      component:ComponentA
+    },
+    {
+      path:'/vuex',
+      component:Vuex
     }
   ],
 });

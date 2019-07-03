@@ -7,6 +7,10 @@
       <router-link to="/home">重定向</router-link>|
       <router-link to="/home/wangwu/20">重定向参数</router-link>|
       <router-link to="/a">别名</router-link>|
+      <router-link to="/movie">电影列表</router-link>|
+      <router-link to="/vuex">Vuex</router-link>|
+
+
     </div>
     <transition name="fade">
       <router-view/>
