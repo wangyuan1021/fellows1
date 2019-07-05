@@ -18,17 +18,17 @@ export default new Router({
     },
     {
       path: '/music',
-      name: 'Music',
+      name: 'music',
       component: Music,
     },
     {
       path: '/book',
-      name: 'Book',
+      name: 'book',
       component: Book,
     },
     {
       path: '/photo',
-      name: 'Photo',
+      name: 'photo',
       component: Photo,
     },
   ]
