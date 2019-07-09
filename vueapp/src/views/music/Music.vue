@@ -29,7 +29,7 @@
             obj.src = elem.src;
             obj.artist = elem.artist;
             obj.pic = elem.musicImgSrc;
-            obj.lrc = 'http://localhost:8080/data/lrc'+ elem.lrc;
+            obj.lrc = 'http://localhost:8080/'+ elem.lrc;
             this.musicList.push(obj);
           });
           this.isShow = true;

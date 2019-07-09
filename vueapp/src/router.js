@@ -6,6 +6,7 @@ import Book from './views/book/Book.vue';
 import Photo from './views/photo/Photo.vue';
 import MovieDetail from './views/movie/MovieDetail.vue';
 import MovieHome from './views/movie/MovieHome.vue';
+import PhotoDetail from './views/photo/PhotoDetail.vue';
 
 
 
@@ -51,6 +52,10 @@ export default new Router({
       name: 'photo',
       component: Photo,
     },
+    {
+      path:'/photoDetail/:index',
+      component:PhotoDetail
+    }
 
   ]
 });
