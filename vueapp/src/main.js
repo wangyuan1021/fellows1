@@ -5,6 +5,8 @@ import store from './store';
 
 import '@/assets/css/reset.css';
 import '@/assets/js/rem.js';
+import '@/assets/css/vue-swipe.css';
+
 
 
 Vue.config.productionTip = false;

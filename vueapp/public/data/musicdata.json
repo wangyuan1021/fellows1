@@ -1,0 +1,49 @@
+{
+  "musicData":[
+    {
+      "title":"七月上",
+      "artist":"Jam",
+      "src":"http://m10.music.126.net/20190709173535/996cb33780f512e93dc19ac6fec11e2e/ymusic/7c93/5d46/9f82/d9a801a4b57d25e6dd58171a33aaf961.mp3",
+      "musicImgSrc":"https://p1.music.126.net/9kZl6NRj3HxmQQ8DqTjZ4Q==/17729624997966923.jpg",
+      "lrc":"lrc/七月上.lrc"
+    },
+    {
+      "title":"心安理得",
+      "artist":"王天戈",
+      "src":"http://m10.music.126.net/20190709175609/d839f88c9c8e16983c420f797c5a77a5/ymusic/7c93/5d46/9f82/d9a801a4b57d25e6dd58171a33aaf961.mp3",
+      "musicImgSrc":"https://p1.music.126.net/Hrckg2IfeAV34N4UAZctRg==/109951163604902705.jpg",
+      "lrc":"lrc/心安理得.lrc"
+    },
+    {
+      "title":"盗将行",
+      "artist":"花粥/马雨阳",
+      "src":"http://m10.music.126.net/20190709180242/5f2addb8d3cc5845c10b912a40b00341/ymusic/7c93/5d46/9f82/d9a801a4b57d25e6dd58171a33aaf961.mp3",
+      "musicImgSrc":"",
+      "lrc":"lrc/盗将行.lrc"
+    },
+    {
+      "title":"年少有为",
+      "artist":"李荣浩",
+      "src":"http://www.ytmp3.cn/down/50491.mp3",
+      "musicImgSrc":"https://p2.music.126.net/BYJjSK9ShVVGuqOQsHdXew==/109951164100298786.jpg",
+      "lrc":"lrc/年少有为.lrc"
+    },
+    {
+      "title":"我怀念的",
+      "artist":"孙燕姿",
+      "src":" http://m10.music.126.net/20190709172649/437cbf7b9f4e3762e53d22c61a10b200/ymusic/7c93/5d46/9f82/d9a801a4b57d25e6dd58171a33aaf961.mp3",
+      "musicImgSrc":"",
+      "lrc":"lrc/我怀念的.lrc"
+    },
+    {
+      "title":"What Are Words",
+      "artist":"Chris Medina",
+      "src":"http://m10.music.126.net/20190709182353/92b11ba868524152811136d520198941/ymusic/7c93/5d46/9f82/d9a801a4b57d25e6dd58171a33aaf961.mp3",
+      "musicImgSrc":"https://p2.music.126.net/9EiWsQpbjAmTajM2t8yBtg==/884007348775999.jpg",
+      "lrc":"lrc/What Are Words.lrc"
+    }
+
+
+
+  ]
+}
