@@ -24,21 +24,14 @@
                 }
             }
             //this指向   .bind(this)  修改this指向
-            add(num,event){
-                console.log(num,event);
-                // this.state.count = 2;//不好使  必须使用setState
-                this.setState({
-                    count:this.state.count+2
-                });
-                // event.target.style.background = "red";
-                console.log(event.target.value);
-                console.log(this.refs.h);
+            add(num){
+                console.log(num);
             }
             render(){
                 return (
                     <div>
                         <h1 ref="h">{this.props.name} {this.state.count}</h1>
-                        <button onClick={this.add.bind(this,1)} value="aaa" ref="btn">click</button>
+                        <button onClick={()=>{this.add(1)}} value="aaa" ref="btn">click</button>
                     </div>
                 )
             }
