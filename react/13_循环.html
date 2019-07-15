@@ -41,7 +41,7 @@
                 <ul>
                     {
                         this.state.list.map((ele,index)=>{
-                            return <li>{ele.name} -- {ele.price}</li>
+                            return <li key={index}>{ele.name} -- {ele.price}</li>
                         })
                     }
                 </ul>
