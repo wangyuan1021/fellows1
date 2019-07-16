@@ -30,23 +30,31 @@
             this.state = {
                 list:[
                     {
+                        id:1,
                        name: '吃饭',
                         isFinished:false
                     },
                     {
+                        id:2,
                         name: '睡觉',
                         isFinished:true
                     },
                     {
+                        id:3,
                         name: '打豆豆',
                         isFinished:false
                     }
-                ]
+                ],
+                count:0
             }
          }
          saveHandle(val){
             var arr = this.state.list;
-            arr.push({name:val});
+            arr.push({
+                id:this.state.list[this.state.list.length-1].id+1,
+                name:val,
+                isFinished:false
+            });
              this.setState({
                  list:arr
              })
@@ -66,9 +74,26 @@
             arr[index].isFinished = !arr[index].isFinished;
             this.setState({
                 list:arr
-            })
+            });
+             this.fn()
 
          }
+         fn(){
+             let arr = this.state.list;
+             let num = 0;
+             arr.forEach(item=>{
+                 if(item.isFinished){
+                     num++
+                 }
+             });
+             this.setState({
+                 count:num
+             })
+         }
+         componentDidMount(){
+            this.fn()
+         }
+
         render(){
             return (
                 <div>
@@ -77,11 +102,11 @@
                     <ul>
                         {
                             this.state.list.map((item,index)=>{
-                                return <ListItem key={index} index={index} item={item} myClick={this.delHandle.bind(this)} change={this.changeHandle.bind(this)}> </ListItem>
+                                return <ListItem key={item.id} index={index} item={item} myClick={this.delHandle.bind(this)} change={this.changeHandle.bind(this)}> </ListItem>
                             })
                         }
 
-                        <li>0已完成/0全部</li>
+                        <li>{this.state.count}已完成/{this.state.list.length}全部</li>
                     </ul>
                 </div>
             )
