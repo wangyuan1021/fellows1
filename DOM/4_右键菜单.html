@@ -48,10 +48,11 @@
 
         document.oncontextmenu = function(e){
             oMenu.style.display = 'block';
-            var dw = document.documentElement.offsetWidth;
-            var mw = oMenu.offsetWidth;
-            var dh = document.documentElement.offsetHeight;
-            var mh = oMenu.offsetHeight;
+            var dw,mw,dh,mh;
+            dw = document.documentElement.offsetWidth;
+            mw = oMenu.offsetWidth;
+            dh = document.documentElement.offsetHeight;
+            mh = oMenu.offsetHeight;
             if(e.clientX > (dw - mw)){
                 oMenu.style.left = (e.clientX - mw) + 'px';
                 oMenu.style.top = e.clientY + 'px';
@@ -66,19 +67,19 @@
             // e.returnValue = false;//取消浏览器默认行为,是属性
             // e.preventDefault();//标准语法，取消浏览器默认行为，是方法
             return false;//也可以
-        }
+        };
         document.onclick = function(){
             oMenu.style.display = 'none';
-        }
+        };
         for(var i=0;i<aLi.length;i++){
             aLi[i].onmouseover = function(){
                 // console.log(i);
                 this.style.background = '#ccc';
-            }
+            };
             aLi[i].onmouseout = function(){
                 // console.log(i);
                 this.style.background = '';
-            }
+            };
             aLi[i].onclick = function(){
                 alert(this.innerHTML);
             }

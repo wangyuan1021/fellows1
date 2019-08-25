@@ -34,7 +34,7 @@
             background: #cccccc;
             border-top: 1px solid #000;
             position: absolute;
-            display: none;
+            /*display: none;*/
         }
         #contain li.selected{
             background: #000000;
@@ -60,10 +60,11 @@
 
     <script>
         //利用修改样式的方法，以及利用修改类的方法，这个div处用的是z-index方法
-        var aLi = document.getElementsByTagName('li');
-        var oContain = document.getElementById('contain');
-        var aDiv = oContain.getElementsByTagName('div');
-        var zIndex = 1;
+        var aLi,oContain,aDiv;
+        aLi = document.getElementsByTagName('li');
+        oContain = document.getElementById('contain');
+        aDiv = oContain.getElementsByTagName('div');
+        zIndex = 1;
         for(var i=0;i<aLi.length;i++){
             aLi[i].index = i;
             aLi[i].onclick = function(){
