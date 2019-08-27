@@ -102,7 +102,7 @@
     postOrder(node1);//4 5 2 6 7 3 1*/
 
     //6 后续遍历迭代方法
-    function postOrder1(root) {
+    /*function postOrder1(root) {
         if(!root){
             return;
         }
@@ -120,7 +120,28 @@
             }
         }
     }
-    postOrder1(node1);//4 5 2 6 7 3 1
+    postOrder1(node1);//4 5 2 6 7 3 1*/
+
+    // 7 层序遍历方法
+    var levelOrder = function (root) {
+        if(!root){
+            return;
+        }
+        var checkArr = [root];
+        while(checkArr.length > 0){
+            var newCheckArr = [];
+            for(var i = 0; i < checkArr.length; i++) {
+                var item = checkArr[i];
+                console.log(item.val);
+                item.left && newCheckArr.push(item.left);
+                item.right && newCheckArr.push(item.right);
+            }
+            checkArr = newCheckArr;
+        }
+    };
+    levelOrder(node1);//1 2 3 4 5 6 7
+
+
 
 </script>
 </body>
